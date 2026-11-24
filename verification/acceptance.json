@@ -1,0 +1,45 @@
+{
+  "checked_project_sources": 16523,
+  "checker_modes": [
+    "con-ron --verified --jobs=2",
+    "Lean default kernel"
+  ],
+  "comparator_lean_version": "4.35.0",
+  "comparison_log_sha256": "a592b9f2d87c61b452d2264b78766e993901e9a46a50a8c982b5d608fd5b157d",
+  "exports": {
+    "reference": {
+      "bytes": 1613638699,
+      "sha256": "c6981d24c2cdae6fe9f50f271d57cda690c98be163ef6608c5f2f6a0d8a6a184"
+    },
+    "solution": {
+      "bytes": 4264227620,
+      "sha256": "1d45860ea288ee5dafa67e155838821fdb8b3a8287583b4371cedc2e1f810a53"
+    }
+  },
+  "finished_utc": "2026-11-16T04:02:04.580403+00:00",
+  "native_comparator_exit": 0,
+  "permitted_axioms": [
+    "propext",
+    "Classical.choice",
+    "Quot.sound"
+  ],
+  "project_source_roster_format": "Sorted JSON object mapping project-relative Lean source paths to SHA-256. UTF-8, ASCII escapes, compact separators, final newline.",
+  "project_source_roster_sha256": "cdf16ce9d48a838d0696eb8865025015fe019ed99f3aed993100838b60724d2a",
+  "public_controls": {
+    "containment": {
+      "exit": 0,
+      "verified": true
+    },
+    "negative": {
+      "exit": 1,
+      "verified": true
+    },
+    "positive": {
+      "exit": 0,
+      "verified": true
+    }
+  },
+  "source_lean_version": "4.32.0",
+  "status": "accepted",
+  "target": "ChiralSU5.exists_interacting_three_generation_theory_with_exact_running"
+}

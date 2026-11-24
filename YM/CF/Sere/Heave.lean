@@ -1,0 +1,155 @@
+import YM.CF.Sere.Teen
+import YM.CF.Tuft.Veil
+import YM.CF.Tuft.Zen
+import YM.CF.Hype.Huge
+import YM.CF.Hype.Whorl
+import YM.CF.Hype.Tres
+set_option maxHeartbeats 1050000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Py
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+variable{N P B:Side}{S:StepData (Domain N B) (Domain P B)}{T: Tube SU.group S}{K:Teller SU.group}{G:Ratio (mid N B) (mid P B)}{R:Patch}{L:ChartRatio SU.group}
+variable {d e η t z g A B':ℝ} {j k k' m n l:ℕ}
+variable (V:Grace K R L)
+open Lich.Muster Lor
+open Jet Vol Rel
+local notation "G5"=>SU.group
+variable {x y0 β:ℝ}(pp:BudgetPoint){t₀ v v₁ p11 p22 p3 p4:ℝ}
+local notation "SN"=> Site (Domain N B)
+open Cascade
+open Fief
+open Yaw Pig
+open Wray
+open Lich.Muster Push.AbsoluteSums
+open Iva Eire
+local notation "ζ"=> (radiusB x)
+open Trees Footprint Iva Eire
+open Jade
+-- certify.WAGES off all granted tasks
+variable {u Hh pK qK a γ vS dS kL w:ℝ}{r p i:ℕ}{X: GramM (mid N B)}{Y: GramM (mid P B)}{U:Grasp V.U B d}
+open Oath Feu Feu.Corset Haro Nor Siete PhysicalNext.JointLoad PhysicalNext.JointLoad.Heir
+open Footprint Jade Py
+-- earnings profiles quant issued b through \ell. Accept permit Rent
+variable (F:Pilot)(Z:Pluck R)(I:Stake.Isle){σ v₀ v' hκ:ℝ}(Q:Pig.Tun I Z F σ){H:Muster G S x d T}{W:GivenX V U}{G₀:Scree.Loom (mid N B)}{G₁:Scree.Loom (mid P B)}{q q':Chi}
+variable (b:StatV V G T U W X Y a γ w x p i)(M:Sheep V U W G Y.J X.J (i+2) p A) (τ:Fend V H M Z F q Y.p X.p γ a j l (r*radiusB x))(s:Sheet.isle M=I)(H0: StageP V H Y X U)(K':Girt.BaseL U G Y G₀ G₁ q' kL)
+variable (N0 N1:ℕ)(A₀:Roof _ vS dS N0 G₀)(A₁:Roof _ vS dS N1 G₁)(he:N0+N1≤radiusB x)(hx:Stake.PondP V F x vS kL j l (i+2))(hu:kL<firstRadius SU.group)(w0:0< vS)(wv:vS ≤ dS)(wq:dS<d)
+variable (htA:0 < A)
+variable {b0:ℝ}(P_:∀ D:Support (Domain P B), Lend P B d D) (T':ℝ)(ht:Vista U Y.J.M Y.J.P P_ (i+2) M.q ((Fintype.card Play:ℝ)*T') M.lot M.tone)(zP: Oise.BoldB (T:=T) (k:=i) (H:=H) b0)
+variable(D_: Corset d q' kL (i+2) p)(N₀:ℕ)(Q_:Rill.Arch G d)(pX:Q_.val=1) (Qx:TailB→Support (Domain P B)→Toll (Iota G))(Qv: Grave→Support (Domain P B)→Toll (Iota G))(hk:RoofT V (M_:=M) Qx Qv)
+-- take common constants. Pee.B+= output p+4.Match after.Same stage calendar.K.No SO.
+variable (h m0 mC C C' w' SC oμ ε δ Dμ kW:ℝ)(Xc:SkyC i C)(hM:1 ≤ m0)(ha:1 ≤ mC)(uS:ε>0)(Xp₀:SuitP i C')(Wol:0≤w')
+local notation "g₁"=> ((R.L.val:ℝ)⁻¹^2)
+local notation "Zr"=> keyS SC A 1 Xp₀.C l p i
+local notation "bq"=> sliceK R.L (l+90) (i+2) SC A ((4:ℝ)^p*1)
+variable (T_:HeatS V F U W I q q' l i p 1 m0 mC C C' w' SC ε 0 0 (sliceK R.L (l+90) (i+2) SC A ((4:ℝ)^p*1)) 1 Xc Xp₀ Dμ 1 kL D_ N₀ δ A h oμ (keyS SC A 1 Xp₀.C l p i*gritY R.L.val) x) {κ0:ℝ}(Jp:PactH d kL (Xp₀.C*(R.L.val:ℝ)⁻¹^2) κ0 q' (i+2) p D_)
+variable (j':l≤18)(pF:fiery SU.group x R.L < vS)(hv1:1 ≤ F.hat R x)(h0:SC =w+2+2)(hK:Footprint.reserve Y.p.supportExponent SC (Footprint.conversion S.ratio (l+90+5)) ε)(hQ:Xp₀.C*(R.L.val:ℝ)⁻¹^2≤1) -- expand g₁
+local notation "Zp"=> (fun p: Roc (mid P B)=> (subtK (r:=r*radiusB x) S p))
+variable {J_:ℕ}{zv:ℝ}
+variable(ve:∀ (F:Forest (ratio G)) (W: Pane (mid P B))(U:Orbit (mid N B)), JointB G (seine G F q' kL W (G₀ U), G₀ U) dS)
+variable(blips:ℕ)
+variable (yb:∃ A0 B₀ V₀ F0, Yields V I Z F H Q U Y.J X.J q q' kL vS i j blips A0 B₀ V₀ F0)
+variable(hp:1≤h)(ph:1 < I.fine)(wK:5*Y.p.B+4≤10*radiusB x)(e':LocalRatio L)(jK:l ≤18)(βU:0< Y.beta)(rP:(j+110)*radiusB x+14≤r*radiusB x)(rQ: 2*((j+5)*radiusB x) ≤ r*radiusB x)
+open Lilt Plume Vow Bake
+local notation "mQ"=> (zv*(degreePrice (radiusB x) zv 1)^0*(1-degreePrice (radiusB x) zv 1)⁻¹)
+local notation "Aƙ"=> (oμ*(backX 2 *reserveT p i (radiusB x) 2))
+local notation "Pδ"=> thermV SC m0 mC ε Dμ Zr 2 Xc p l
+local notation "ΣC"=> Troupe S (r*radiusB x) (Words S)
+variable (hv_:1 ≤ rainX R 1 x)(uR:rainX R 1 x≤ rainX R 2 x)
+local notation "σn"=> Aura (mid N B)
+local notation "Φn"=> Aura (mid P B)
+local notation "Kz"=> (mid N B)
+local notation "rQv"=> r*radiusB x
+local notation "Θr"=> Y.p
+variable {Yφ:Troupe S (r*radiusB x) (Words S) → Palot.leaf (Site (Domain N B)) → Raid (LeanV (Single (mid N B)))} {Uφ:Troupe S (r*radiusB x) (Words S) → Palot.leaf (Site (Domain N B)) → Orbit (mid N B) → Cipher (mid N B)}
+variable (Mν:Jade.GroV V F Z M P_ ht τ K' Yφ Uφ h zv 1)(Wν:Angost V F Z M τ K' P_ T' ht)
+open Prism Haro Oath
+variable (iκ:Roc (mid P B))(O:Ride S) -- trim
+local notation "Ωv"=> ((H.post+90)*radiusB x)
+local notation "Pm"=> (hostX (l:=Ωv) S iκ).val
+local notation "YO"=> (Stilo.beamH (hostX (l:=Ωv) S iκ).val)
+local notation "Hc"=> actionZ Y iκ
+local notation "V'Z"=> vanX (M:=M) V D_ U W H iκ Jp Q_
+local notation "qT"=> (Prism.Rock (mid N B))
+local notation "Wp'"=> (taxV X.p Yφ h)
+-- authorization.L.Revenue.Spectral.Shape.Sun. HOIST from X Loom.F
+local notation "ΘC"=> (beam_C (H:=H) V M D_ Q_ C' Xp₀ Jp)
+local notation "Υ"=> (glasp (H:=H) V M D_ Q_ C' Xp₀ Jp)
+local notation "Vt"=> forge_P (H:=H) V M D_ Q_ C' Xp₀ Jp
+local notation "Hq" t:max=> hostX (l:=Ωv) S t
+local notation "tη"=> (Youth N P B)
+open Larch
+variable (κ':Roc (mid P B)→ℝ)(Pp:∀ iκ:Roc (mid P B),PressB Y.p iκ.1 (actionZ Y iκ) h (κ' iκ)) (GG: Gala p i 100 x 3)
+variable{ad:ℝ}(Tp:Ids (mid N B))(BB1 BB2:Roc (mid P B)→ Aura (mid N B)→ℝ)(Vh:∀ iκ:Roc (mid P B),ReconB (Xs:=X) H Tp iκ h (fun B=> Uφ (subtK S iκ) B) (BB1 iκ) (BB2 iκ) (vanX (M:=M) V D_ U W H iκ Jp Q_) (ad* Y.p.mass iκ.1.val.2 (κ' iκ)))
+local notation "Tz"=> (fun t:tη=> grain_V i h (Wp' t.2.1 (Zp t.1)+ chi_f X.p.order*((BB1 t.1 t.2.1)+(BB2 t.1 t.2.1))))
+variable (DF:ℝ)(u2:∀ oRh:Site (Domain N B),(∑ i:Roc (mid P B) with S.ratio.parent i.1.val.1=oRh,∑ j:Palot.leaf (Site (Domain N B)) with (hostX (l:=((H.post+90)*radiusB x)) S i).val⊆j.val, X.p.mass j.val (BB1 i j + BB2 i j)) ≤ DF)
+local notation "σQ"=> (loft_X (S:=S) ((H.post+90)*radiusB x))
+local notation "RΛ"=> Roc (mid P B)
+local notation "UΨ"=> ΘC iκ (Stilo.beamH O) -- remove
+local notation "o₁"=> spot_v (S:=S)
+local notation "WC"=> (miteV X.p.B X.p.order X.p.power 1 zv)
+open Vow Bake Rue Larch
+-- purchase van transfers T^. program.X.Up.Ph.N rho. threshold^Room.CALL SCC.Ph.Ch.b. any Board.S Term.Φ.cost waivers. n=6 supports.
+local notation "StF"=> (Vt)
+local notation "σP"=> X.p
+local notation "δΦ"=> grain_V i h 1
+local notation "Kv"=> GvC i h WC DF (Larch.ball_v (cirQ x):ℝ)
+local notation "Qδ"=> (X.p.supportExponent+1+1)
+local notation "Kw"=> shine_C (l+300) (X.p.supportExponent+1+1)*(tet_B (l+300) X.p.B * GvC i h WC DF (ball_v (cirQ x):ℝ))
+variable (pW:WindV K.j p)(pα:Tact G S Y h δ κ')(Nπ: BeaconP K.j Y S)
+local notation "Λm"=> ((2:ℝ)^p*(16*δ)/h^2)
+variable (ζ0:ℝ)(hvZ:0 < ζ0)(hZ:3*ζ0 ≤ M.r0)(uZ:ζ0 ≤1)
+local notation "Cπ"=> (population*(A*followV [] R.L))
+local notation "ρθ"=>way_Q R i p x δ Cπ ζ0 pW.C h
+variable (Ωs HS Hf Df Lv Lp LK:ℝ)(Ap:Corona_Q (zv:=zv) V F Z M τ K' P_ T' ht D_ h C' δ Xp₀ Jp HS Hf Df Lv Lp LK)
+local notation "XΨ"=> (pace_Z R Hf δ Df)
+local notation "YP"=> pay_Z p (radiusB x) l i x h zv (XΨ) w
+local notation "Kα"=> (rainX R 2 x)
+variable (qv:degreePrice (radiusB x) Ωs 1 < 1)(hQ0:0 < Ωs)(hS:1 ≤ rainX R 2 x)(qHK:pay_Z p (radiusB x) l i x h zv (pace_Z R Hf δ Df) w+Lv+ (HS*degreePrice (radiusB x) HS 1 ^0*(1-degreePrice (radiusB x) HS 1)⁻¹) ≤1) (μσ:rainX R 2 x*LK+ Real.exp 1*((HS*degreePrice (radiusB x) HS 1^0*(1-degreePrice (radiusB x) HS 1)⁻¹)+(pay_Z p (radiusB x) l i x h zv (pace_Z R Hf δ Df) w+Lv)) ≤ Ωs)
+include Ap b τ K' hvZ hZ uZ pα Nπ GG pW htA hp H0 A₀ A₁ he hx w0 wv wq e' βU qv hQ0 hS qHK μσ
+local notation "σY"=> (shine_C (l+300) (X.p.supportExponent+1+1))
+omit qv hQ0 hS qHK μσ
+open Ione
+variable (qT_:Pant_W (N:=P) Y)
+include qT_
+structure Psalm (X:GramM (mid N B))(Y:GramM (mid P B))(U:Grasp V.U B d)(G₀:Scree.Loom (mid N B))(G₁:Scree.Loom (mid P B))(G:Ratio (mid N B) (mid P B))(S:StepData (Domain N B) (Domain P B))(q:Chi)(u h v w δ:ℝ)(L:ℕ) : Prop where
+ talent:∃ (T':RegBudget (mid N B))(Q:ForceBudget (mid N B))(Δ:ℝ)(e:ℂ), IncX Ione.Utrue T' X.p h v ∧ Dark Ione.Utrue Q X.p h w ∧ Beau.Ionic X.p L T' ∧ |Δ| ≤ δ ∧ ∀ V:Orbit (mid N B),Rue.FleetS X.p.threshold V.1 → stove U G₀ Y G₁ G S q u 0 V= denZ (Jade.spark_B X T' Q Δ e) U G₀ V
+-- Full μ ledger conditional Vital.Proviso Wα.H.Portal. exact.Data. Notice Gauge.Πure Pressure.Move DER. express abstract program fees pre afterL.CHECK applicability.Deterministic Φ.Old.SCR Step. P.Act.RP Ω.
+open Taxi Beau AnalyticBridge.VerifiedReset Push.BetaTransport
+local notation "AYp"=> (pack_Q i * YP + Lv)
+abbrev pool_Q (α: ℝ)(c:ℝ):=α+c
+local notation "Fα"=> (wren_K i p*(pace_Z R Hf δ Df+rise_K i p w* |way_Q R i p x δ Cπ ζ0 pW.C h|)+reserveT p i (radiusB x) 1*(3*Lp))
+local notation "qΞ"=> K.below.width
+local notation "uΞ"=> K.below.paths
+variable (Aχ Γχ:ℝ)(DA:Taxi.OriK i Aχ)(DG:Taxi.DayT i Γχ)(hA:0≤ Aχ)(hc:0 ≤ Γχ)
+local notation "GLv"=> (glow_F X.p X.funds K.below.width K.below.paths Γχ Fα R.L.val)
+local notation "Φν"=> (HS * (degreePrice X.p.B HS 1)^0*(1-degreePrice X.p.B HS 1)⁻¹)
+open UVNext.PricedKernels Work.F03 WilsonStartup
+variable (hp6:6≤X.p.B)(hn0:60<(More (mid N B)).val)(hq: Decent X.funds X.p)(hL: Geo.Width X.p X.funds K.below.width)(hLa: (X.p.supportExponent+1+1)/ (X.p.B:ℝ) ≤ K.below.width / 8)
+-- pose room root η any αK. Dark stress Reserve.P_s width Kα. no loss apart from fees.Zδ Boot.R `.not yet spin`. 
+variable (hq1:pack_Q i*pay_Z p (radiusB x) l i x h zv (pace_Z R Hf δ Df) w+Lv+glow_F X.p X.funds K.below.width K.below.paths Γχ (wren_K i p*(pace_Z R Hf δ Df+rise_K i p w* |way_Q R i p x δ (population*(A*followV [] R.L)) ζ0 pW.C h|)+reserveT p i (radiusB x) 1*(3*Lp)) R.L.val+(HS * (degreePrice X.p.B HS 1)^0*(1-degreePrice X.p.B HS 1)⁻¹) ≤1)(hq2:rainX R 2 x*LK+Real.exp 1*((HS * (degreePrice X.p.B HS 1)^0*(1-degreePrice X.p.B HS 1)⁻¹)+(pack_Q i*pay_Z p (radiusB x) l i x h zv (pace_Z R Hf δ Df) w+Lv+glow_F X.p X.funds K.below.width K.below.paths Γχ (wren_K i p*(pace_Z R Hf δ Df+rise_K i p w* |way_Q R i p x δ (population*(A*followV [] R.L)) ζ0 pW.C h|)+reserveT p i (radiusB x) 1*(3*Lp)) R.L.val)) ≤Ωs)
+include qv hQ0 hS hp6 hn0 hq hL hLa hq1 hq2 DA DG hA hc
+lemma earth_v: Psalm V X Y U G₀ G₁ G S q' kL h (tax_E X.p X.funds K.below.width K.below.paths Aχ Γχ*Fα) (Cog_P X.p Ωs Kα) (phase_v X.p Fα) R.L.val:=by
+ obtain ⟨Yφ,Uφ,Mν,gb⟩:=baud_E V F Z b M τ H0 K' N0 N1 A₀ A₁ he hx w0 wv wq htA P_ T' ht D_ h C' δ Xp₀ Jp hp e' βU κ' GG pW pα Nπ ζ0 hvZ hZ uZ HS Hf Df Lv Lp LK Ap qT_ -- tune
+ let Zs:Monk SU.group S:=⟨bareStores S,Classical.choice (Tree.select _ S.patch.odd_side),Classical.arbitrary _,1,1,0⟩; have hV(T:Orbit (mid N B)): IsStarProjection (spar K.j X.J.M (G₀ T)):= (U.broadness _ K'.size _).projection _ ((A₀.paid T).shrink wq.le)
+ let U:=(cone_f Uφ); have heB:X.path.Bounds X.funds K.below.width K.below.paths V.W.bar:=by rw [b.coinX,b.care]; exact b.hunt.down
+ have htB:= film_F X.p X.path heB Aχ Γχ (b.down.order ▸ DG) (b.down.order ▸ DA) hc hA hq hL hn0 hp hLa hp6 (show Reef.Rare X.path from b.care ▸ b.hunt.rareL) R.L.val U (nixV U) _ _ HS gb _ Ωs hS hQ0 (show degreePrice X.p.B Ωs 1<1 from b.fee ▸ qv) hq1 hq2 X.beta -- `(hb:=)`? argument order r. hS included.
+ obtain ⟨Δ,L',E',Kν,p0,zU,y,x,r⟩:=htB.rise
+ obtain ⟨e,hE⟩:=Jade.toe_B V F Z M P_ ht h Zs τ K' H0 N0 N1 dS A₀ A₁ he wv wq w0 hx Yφ Uφ Mν e' βU b.dose.grown hV E' Kν L' Δ (fun i t=>by rw [Jade.key_c]; exact r i t) -- tune
+ exact ⟨⟨E',Kν,Δ,e,p0,y,zU,x,hE⟩⟩
+end YM.CF.Py

@@ -1,0 +1,157 @@
+import GaugeFieldConstruction.Polis
+import GaugeFieldConstruction.Budgets
+import GaugeFieldConstruction.Moll
+import GaugeFieldConstruction.Panther
+import GaugeFieldConstruction.Kenko
+import GaugeFieldConstruction.HopeQ
+import GaugeFieldConstruction.Overland
+set_option autoImplicit false
+set_option quotPrecheck false
+set_option maxHeartbeats 270000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+noncomputable section
+namespace YM.CF.Py.Rate
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+open Ione Beau Haro Cascade Fief
+open scoped Mew
+open Wray Oath Feu Feu.Corset Nor Yaw Pig Oise Jade Plume Push.AbsoluteSums
+open Trees Lich.Muster Jet
+set_option linter.flexible false
+open Eire Girt
+open VolumeRate
+namespace Pitching
+open Lich Iva
+open Engine Engine.Basin Engine.Docket Dialect
+open Vow Bake Salt Stax Sour Larch
+namespace Focus
+open Appel.Rate Stockpile
+section
+open Sour.MatchW Sour.MatchW.Technique Cycle929 Tap Lilt
+open Next.Fluctuations.Sector
+open Neon
+open QuadClock Haro
+open Mew Vow Rive Bake
+open scoped YM.CF.Mew
+open Riant
+open YM.CF.Oath.BellPrice PinRack
+open TableF TableF.Boom Lenten Layout Fren
+variable
+  {K : Teller SU.group} {R : Patch} {L : ChartRatio SU.group} {V : Grace K R L}
+  {d:ℝ} {m n N B : Side} {U : Grasp V.U B d} {W : GivenX V U} {J : Robes N V W} {q : Chi}
+  {A C' Pay h ρ f ff ag Cg x β β' : ℝ} {D : Treaty J q A C' Pay h ρ} {c:Estimate}
+  {w:Location (R:=R) B m n} {p p' : BudgetPoint}
+  {o : Pitching w D x}
+  {F:Corr (Scree.mid n B)}
+  {N0:ℕ}
+  {t bL σ κ Bv:ℝ}{nₐ:ℕ}{pW:WindV K.j 2}
+  {κq γq:ℝ} {C:stationary D c x ag Cg κq Bv nₐ}{Z0:Cellar N0 o p p' c (allF R.L x) ag Cg}
+  {r b0 b1 b2:ℝ} [Nonempty (Haro.ΘS r)]
+  (s:Shop w J p p' q h x r)
+  {nμ:ℕ}{Gχ v1 kf wC z b kc hℓ Dμ:ℝ}{Tφ:Hove.Grant K.j 2}
+  (P_:InkEvent (Z0:=Z0) (C:=C) (pW:=pW) (γq:=γq) s v1 kf wC z b Gχ Tφ nμ kc hℓ Dμ)
+  (Pq:Pinewood R)
+  {I:Type}[LinearOrder I][Fintype I]
+  (u:ℂ)(tP:β∈Year R x)(K₀:Girt.BaseL U w.G (w.buildIn V p' β F u) w.coarse w.fine q J.d)(KΦ:Cusp (mid m B))(bQ:ℝ)(sq:HStmt (Z0:=Z0) (κq:=κq) (F:=F) (nₐ:=nₐ) s u tP K₀ KΦ b bQ kc hℓ Dμ)
+ (Xψ: Mew.Key I→RegBudget (mid n B))(Zψ:Mew.Key I→ForceBudget (mid n B))(Sψ:I→Site (Domain n B))(hk:Call_H (Y:=w.buildIn V p' β F u) h Xψ (0:Mew.Key I→RegBudget (mid n B)) Zψ Sψ (εLeaf R.L x) (εLeaf R.L x) (εLeaf R.L x))
+  (Fz:Key I→Troupe (w.step V) (coming D.Z 105 5*radiusB x) (Words (w.step V))→ Aura (mid m B)→ Copy (mid m B))(Yb:Key I→ Vow.Pax (mid m B))(Ku:∀ z:Key I,Girt.BaseL U w.G (color_b (w.buildIn V p' β F u) β (Xψ z) 0 (Zψ z) u) w.coarse w.fine q J.d)
+  (Nheat:ℕ)(fog:ℝ)(va:WarmAge o c kc hℓ Dμ p p' Nheat fog)
+  (P:PinRack)(ε H0f ξm δ Nfee :ℝ)(Zs: Corset d q J.d 8 3)(Zv:ℝ)(Jp:PactH d J.d ε Zv q 8 3 Zs) (pQ:Readied P V U W D.pilot D.I A ε h Nfee (q:=q) J.d J.k Zs Nheat x H0f ξm δ)
+  (hWC:100*(1+radiusB x) ≤ (Domain m B).val)(hvQ:300<(mid n B).val)(hθ:K.j=4)
+-- consultation authority. no local quotation. Use Pay certificates from same Institution. $can independently compute at any Kcap$. Use all fields on same stand.
+-- not relying on Tag.Haven for wax from Gives
+include hk P_ sq
+variable (px: Patricia p HI R nμ 2 6 5 x (colorsPhi R.L Gχ x) Gχ (Pay*gritY R.L.val) h (tintW HI HI 6 2 5 K.j Tφ Pay kc Gχ) s.b0 (βB s.b1 r) (βB s.b2 r) (tileFee c x κq) (tileSmall c R x κq (sprayM D.pilot R ag x)) (εLeaf R.L x) kf v1 b z wC Pq)
+omit hk
+open Riant
+open CoeffArc
+variable (Ωp:Key I→ Troupe (w.step V) (coming D.Z 105 5*radiusB x) (Words (w.step V))→ Aura ( Scree.mid m B)→ Raid (LeanV (Single (Scree.mid m B))))
+variable {D1 D2 D3 D4:ℝ}
+variable (sqK: LoadedK (Z0:=Z0) (κq:=κq) (F:=F) (v1:=v1) (kf:=kf) s Pq u tP KΦ Xψ Zψ Sψ Fz Yb Ku Ωp Nfee D1 D2 D3 D4)
+open CoeffArc Roots
+-- Epoch simultaneous capacity grants go into E_Tool; we don't reconstruct surrogate. Costs pointwise explicit.
+variable {DΛ:Type}[Fintype DΛ][DecidableEq DΛ]
+variable (Dx:Directory I DΛ) (qκ qι τ:ℝ) (zϖ:DΛ→Seat (mid n B))(hw':Sψ=Dx.F_v zϖ)
+variable (F_: Dx.TourF) (V_: Dx.TourG) (F': Dx.TourF) (V': Dx.TourG)
+variable (hq:Dx.QSign p' w.input.M zϖ (fun i=> νTip Xψ i) R.L h (RamoK R.L) qκ F_) (p0:Dx.InShape F_ V_ τ)(p1:Dx.InShape F' V' τ)
+variable (hp:Chords qι qκ D1 D3 D4 h τ p p' R.L)(H:∀ x:DΛ,PocketL R.L D4 τ (Dx.depth x))(hR:∀ j,Dx.depth j ≤2)(uV:∀ j,Cresc R.L.val p' (Zhub (zϖ j))) -- tune Qhub
+variable (ε0: RamoK R.L*qκ≤ Nfee*coin₂ R x) (Tp:Ids (mid m B))
+variable (t0:ℕ)(hq0:Roots.Force_M p.B ((w.step V).ratio.parent ∘ Sψ) t0) -- Prep proof.in summary.
+variable (hu:(R.L.val+1)*(4*p.B+2)+2*p.B≤p.B+cape_B p.B)(tb:t0 * |D2| ≤ v1)
+omit P_ sq -- included Panther!
+include sqK hw' ε0 hp H hR uV p0 p1 hq
+local notation "P0u"=> w.buildIn V p' β F u
+local notation "X0u"=> Pitching.start (V:=V) (w:=w) p β
+local notation "Fcount"=> (MeasureV Yb Dx (Btor p w V zϖ) X0u h R.L)
+local notation "T'"=> (AxisPb zϖ w V)
+local notation "PqH"=> (RootPrice p ∘ T' : DΛ→ Scree.Hub (mid m B))
+local notation "Θ'"=> (fun z:Key I=> ΦP_ (D:=D) (F:=F) (β:=β) s (cone_f (Fz z)))
+variable (J_:Dx.ToMG) (Kx:Dx.ToPC) (QK:Dx.Substance (AxisPb zϖ w V) (Pitching.start (w:=w) (V:=V) p β) qι h (MeasureV Yb Dx (Btor p w V zϖ) (Pitching.start (w:=w) (V:=V) p β) h R.L) F' V_ J_ Kx R.L)
+include QK
+local notation "G_TAG"=> Dx.Ctags J_ Kx R.L V_
+local notation "Q_Ψ"=> N_P Yb Tp Fcount
+local notation "K_Ψ"=> N_K p KΦ Θ' Fcount
+local notation "Λ"=> ((w.step V).ratio.parent ∘ Sψ)
+local notation "Ξ"=> (Haro.riseV ((s.standby (β:ℂ) (F,0)).1))
+local notation "Xr"=> (s.operate.realArr β F)
+local notation "Xn"=> (s.operate.posted β F)
+local notation "Xk"=> (s.operate.offset β F u)
+-- single Mom step, yields every use unmarked.Warp.Y
+include s P_ px hq0 hu tb sq Tp hk
+local notation "U_p"=> ((s.operate).output V w p β F u)
+local notation "Vo" => (Haro.riseV ((s.standby (β:ℂ) (F,0)).1))
+local notation "PostM"=> (Directory.Maxi R.L)
+local notation "Bp"=> Bus1 Q_Ψ Λ G_TAG
+local notation "Bv"=> Bus2 K_Ψ Λ G_TAG
+-- response stoVe.N.Sign. Semantics.Journal returning increments on every argument. Cylinder W and Q.
+variable (kW:ℝ)
+-- Supply.Board.K Outcome.Must avoid macro in binder. refer Angle Epoch Branch W.S.Linear. 
+-- Vision API: return p.Sign in Orientation shape.Proposition. canonical selected with offsets. executability when compiled.Q. Clocks after pair purchases.Service context.KΨ Step.Date.Time.
+variable (Uω:ℝ)
+open TableF Lenten Layout Fren
+-- Root continuity across marks not yet coded.
+-- input Plan and choices explicit in Art.Y.Use.Lemt.P; output polynomials identified.Print.Out.
+abbrev AxRise (u:ℝ)(p:BudgetPoint)(R:Patch)(x:ℝ)(P:Pinewood R)(t:ℕ)(Kf:ℝ): Prop:= Harmony p.B t 16 (YardK R.L)∧Nice_B p.B t 16 (1/32) ∧ WidthP 16 (βLo R (QLife R x)) 1 p.B t+hope_E p.B (Pcal P x)≤ u/16*QLife R x ∧ Charges 16 (YardK R.L) Kf Kf p.B t ≤ u/16*QLife R x
+-- Scope has include issues? Vars auto.Shorthand output V.Marr.Iter.
+abbrev αGift (R:Patch)(q:ℝ):= βLo R q
+-- invariant.Proofs order inspect #check. ΠKey.L.
+structure Shellκ (T:DΛ→Seat (mid m B))(C:I→ I→ℂ)(A:I→ Zone (mid m B))(W_:Key I→Cusp (mid m B))(M:Tulip.Male)(F_Out:Dx.TourF)(G_In:Dx.TourG)(J₁:Dx.ToMG)(K₄:Dx.ToPC)(R0 Tφ:ℝ):Prop where
+     -- T explicit. Toolbar.$$ unused M?
+     recoup : Directory.Paid Dx X0u A T F_Out G_In J₁ K₄ R.L qι R0 h
+     spark : s.operate.output V w p β F u= Jade.spark_B X0u (Xr).1 (Xr).2 Xn Xk
+     audit :let Fx:= N_P Yb Tp A; let Lκ:= N_K p KΦ W_ A
+            RillK (h:=h) (X:=X0u) (Y:=P0u) (U:=U) (G₀:=w.coarse) (G₁:=w.fine) (G:=w.G) (S:=w.step V) (q:=q) (kL:=J.d) (V:=V) Xψ 0 Zψ (Xr).1 (Xr).2 Xn Xk Ξ Sψ Fx Lκ (G_s A) kf (p.supportExponent+1/2) -- avoid shadow F_ rename; macro.F.
+     apr : let B':= Bus1 (N_P Yb Tp A) Λ C; let KK:= Bus2 (N_K p KΦ W_ A) Λ C; let W':= BusW Λ C (W_age W_ p); let Zθ:= BusQ Λ C (fun z=>NQr z KΦ A);
+        (KK ∅=(Xr).2 ∧ ArmorK (N:=m) (B:=B) p h (Pq.E x+Pq.D x) (zero_lt_one.trans_le D.high) (cipherK J.n) t0 x Λ B' KK W' Zθ (βLo R qι) (WageAge (Pq.Γ x) p.B) b |R0| kf PostM ∧
+          ∃ Ls,∀ v:Orbit (mid m B),Rue.FleetS p.threshold v.1 →∀ z:Key I,coldE p (WritV Λ W' z) v = owed_E _ (Ls+enerS_K X0u Xn v)+ TurnArc Λ C (α_ξ (G_s A)) z • (1:Cipher (mid m B))+ exponentL p ((Xr).1+WritV Λ B' z) v.1+fuelV p (WritV Λ Zθ z) v) ∧
+        Journal1 p (zero_lt_one.trans_le D.high) Λ B' (Lapse KK) (11/8) 16 (Uω/16*qι) ∧ Dx.QSign p M T (fun i=>B' {i}) R.L h (RamoK R.L/16) qι F_Out
+     interpret : let F1:= N_P Yb Tp A; let B':= Bus1 F1 Λ C; let KK:=Bus2 (N_K p KΦ W_ A) Λ C; let V0:= s.operate.output V w p β F u; let Δ:= WritV Λ B'; let Φ:= WritV Λ (Lapse KK); let Xp:= Ξ;
+        ∀ l:List I,ψS Λ l→∀ U':Orbit (mid m B),Rue.FleetS p.threshold U'.1→let Υ(y):=fun z:Key I=> denZ (color_b P0u β (Xψ z) 0 (Zψ z) (u+ -α_ξ (G_s A) z)) U w.fine y; let γ (t:List I) y:= (lynx K (w.step V) w.G w.fine w.fine w.coarse P0u q J.d Xp U' y) (tipI (Υ y) t); let θ(z:Key I):= color_b V0 V0.beta (V0.F+Δ z) V0.slip (V0.K+Φ z) V0.v; (∀ n,Integrable (γ n) (city _)) ∧ tipI (fun z=>denZ (θ z) U w.coarse U') l=Roots.snow Λ C (fun t=>∫ y,γ t y∂city _) l
+#check Shellκ
+variable (ar:AxRise Uω p R x Pq t0 kf)(hι:qι=QLife R x)
+include ar hι
+lemma puffed : Shellκ (D:=D) (p:=p) (h:=h) (F:=F) (x:=x) (β:=β) (w:=w) (kf:=kf) (b:=b) (J:=J) s Pq u KΦ Xψ Zψ Sψ Yb Dx qι Tp t0 Uω (AxisPb zϖ w V) (Dx.Ctags J_ Kx R.L V_) Fcount Θ' (w.output.M) F' V_ J_ Kx D2 0 :=by
+ let Z:= RillK.budget_B s P_ Pq u tP K₀ KΦ bQ sq Xψ Zψ Sψ hk Fz Yb Ku Nfee px Ωp sqK Dx qκ qι τ zϖ hw' F_ V_ F' V' hq p0 p1 hp H hR uV ε0 Tp t0 hq0 hu tb J_ Kx QK
+ have Hθ:=curator s P_ Pq u tP K₀ KΦ bQ sq Xψ Zψ Sψ hk Fz Yb Ku Nfee px Ωp sqK Dx qκ qι τ zϖ hw' F_ V_ F' V' hq p0 p1 hp H hR uV ε0 Tp t0 hq0 hu tb J_ Kx QK
+ refine ⟨Hθ.1,Z.1,Hθ.2,⟨Z.2.2, returned_P s P_ Pq u tP K₀ KΦ bQ sq Xψ Zψ Sψ hk Fz Yb Ku Nfee px Ωp sqK Dx qκ qι τ zϖ hw' F_ V_ F' V' hq p0 p1 hp H hR uV ε0 Tp t0 hq0 hu tb J_ Kx QK Uω ar.1 ar.2.1 ?_ ?_,(Yield_C s Pq u tP KΦ Xψ Zψ Sψ Fz Yb Ku Nfee Ωp sqK Dx qκ qι τ zϖ hw' F_ V_ F' V' hq p0 p1 hp H hR uV ε0 J_ Kx QK Tp).1⟩,ladder_w s P_ Pq u tP K₀ KΦ bQ sq Xψ Zψ Sψ hk Fz Yb Ku Nfee px Ωp sqK Dx qκ qι τ zϖ hw' F_ V_ F' V' hq p0 p1 hp H hR uV ε0 Tp t0 hq0 hu tb J_ Kx QK⟩
+ · rw [hι]; exact ar.2.2.1
+ rw [hι]; exact ar.2.2.2
+#print axioms puffed
+end
+end Focus
+end Pitching
+end YM.CF.Py.Rate
+end

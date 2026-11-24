@@ -1,0 +1,71 @@
+import SatinThinFieldsCommonPairNovember5
+import YM.SU5.Assay.FirstGuarantee
+
+set_option autoImplicit false
+set_option maxHeartbeats 2000000
+set_option synthInstance.maxSize 28000
+noncomputable section
+namespace YM.CF.Buffered.Afterglow.Tower.VacuumSelection
+open Function Filter Metric NormedSpace SU Lat Lattice Wilson Cube Finset Mir Phase MeasureTheory RP Reflect Advance Nacre Spire Scroll Peaks Rush Tulip Skye Window Vale Girt
+open Push.SectorMeasure RG Lifted Scree ProbabilityTheory Py Py.Rate LocalLimit FullBill Sound Common Ballad Cordial
+open scoped Topology Matrix MatrixOrder Matrix.Norms.L2Operator BigOperators Kronecker ComplexOrder InnerProductSpace NNReal ENNReal Classical
+attribute [local instance] opCStarAlgebra
+open Preparation Journey Satin Fock Analysis SlabMark MeshClock SatinVerification Vacancy Tapestry
+open Germ Alliance Lamour.Bridge.Celeste Designs Twah Prototype
+open YM.Stationary (Gaia)
+open CF.Onyx (riseX moor)
+open Lamour.Bridge.Celeste.Morn Regis.Head Regis.Head.Brecht
+namespace Spine
+open Aria Casting Six
+
+/-- Install the finite-width assay budget before election. Elect once using the
+thin-field construction. At every sufficiently late height the very same two
+test functions give the strong operator comparison, the protected finite-width
+assay, the earlier raw reading and the vanishing slope. -/
+theorem reviewThinAssayOnOnePair :
+    ∃ (P : Spine) (K : P.Register) (c r : ℕ → ℕ) (x : P.Spectrum0 3) (J : P.Ellis 3 x),
+      uniform P K thinRequest 1 1 ∧ id ≤ r ∧ P.Repeater K x J r ∧
+      P.Experiment K c r x J ∧ P.Strategy K c r x ∧
+      (∀ cost : Lead.Clan → ℝ, (∀ Z, 0 < cost Z) → ∀ᶠ j : ℕ in atTop,
+        ∀ Z, Nonempty (Thinning.Portfolio x (c j) (r j) (cost Z) Z)) ∧
+      ∀ᶠ i : ℕ in atTop, ∃ (M : P.Menagerie) (b : ℕ → ℕ) (a : ℝ) (F G : SampleDose)
+        (D : ∀ Z : Lead.Clan, P.VoucherOp x Z (r i) b),
+        P.GetsThin K x c r i a F G b D ∧
+        P.Dawn K x (c i) (r i) reviewEarlierBox reviewLaterBox fullWay F G M ∧
+        P.FixedSatinReadings K x (c i) (r i) a F G ∧
+        Tendsto (fun j : ℕ => P.slopeReading x (c j) (r j) 0 F G) atTop (𝓝 (0 : CrossRead)) := by
+  obtain ⟨P, K, h, host, _, reserves, _⟩ :=
+    macro_with ordinaryAdmission thinRequest 1 1 zero_lt_one id
+  obtain ⟨x, J, r, hr, W⟩ := repeats h id
+  obtain ⟨c, E, _⟩ := W.also_old
+  have T : P.Transmission x c r := trans6 E
+  have S : P.Strategy K c r x :=
+    ⟨⟨J, E⟩, T, host, reserves, fun _ ht => funded_company h reserves ht⟩
+  refine ⟨P, K, c, r, x, J, h, hr, W, E, S, ?_, ?_⟩
+  · intro cost positive
+    filter_upwards [Thinning.cofinance K c r J E T cost positive] with j hj
+    intro Z
+    obtain ⟨portfolio, _⟩ := hj Z
+    exact ⟨portfolio⟩
+  · let B : Fin 3 → Bool := fun _ => false
+    obtain ⟨p, e, _, _, authorization⟩ := authorize B
+    filter_upwards [charterWeather W,
+      packs_within_rectangles T (Metric.ball p e) B authorization reviewEarlierBox.spare
+        reviewLaterBox.spare fullWay (reviewEarlierBox.spareLater fullSweep),
+      W.eager.tendsto_atTop.eventually_gt_atTop P.calibration.ℓ,
+      S.reaches fullSweep, S.offer (show 0 < 1 / (2 : ℝ) by norm_num)] with i weather parcels late taps lots
+    obtain ⟨b, mono, static⟩ := W.windUp i
+    obtain ⟨a, F, G, hF, hG, returned, insideF, insideG, priceF, priceG⟩ := parcels.2
+    obtain ⟨M, company⟩ := lots
+    let D (Z : Lead.Clan) : P.VoucherOp x Z (r i) b :=
+      Classical.choice (promises x Z (r i) b h mono)
+    have thin := BoxBill.boxesGet P K x c r i a F G b D (weather b mono static)
+      late hF hG insideF insideG mono J returned priceF priceG
+    have fresco := taps.portrait K J hF hG insideF insideG returned
+    obtain ⟨_, _, hU, hV⟩ := thin.oldData
+    exact ⟨M, b, a, F, G, D, thin, fresco.dawn reserves company, thin.retest.2,
+      plateauSlope E F G hU hV hF hG⟩
+
+#print axioms reviewThinAssayOnOnePair
+end Spine
+end YM.CF.Buffered.Afterglow.Tower.VacuumSelection

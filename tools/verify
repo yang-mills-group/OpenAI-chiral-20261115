@@ -1,0 +1,198 @@
+#!/usr/bin/env python3
+"""Rebuild the joint proof from its public sources and check both kernel exports.
+
+Usage: tools/verify /absolute/tools /absolute/new-run
+       tools/verify --stage-only /absolute/new-run
+
+Install the two Linux toolchains with tools/setup-linux. The full replay uses
+bubblewrap, public Git dependencies, the public Mathlib cache and ample memory.
+The stage-only check verifies the release manifest and target, then stages both source lists
+without installing dependencies, building any Lean modules or starting a verifier.
+"""
+import hashlib
+import json
+import os
+from pathlib import Path
+import re
+import shutil
+import subprocess
+import sys
+
+TOOLS = Path(__file__).resolve().parent
+BUNDLE = TOOLS.parent
+MODULES = {"reference": "SU5ExactJointChallenge", "solution": "SU5ExactJointSolution"}
+THEOREM = "ChiralSU5.exists_interacting_three_generation_theory_with_exact_running"
+AXIOMS = ["propext", "Classical.choice", "Quot.sound"]
+# Lean v4.35.0 tests/lake/tests/comparator-from-export, adapted from Henrik Böving.
+# See notices/Lean-LICENSE.txt.
+PRIMITIVES = """Quot Quot.mk Quot.lift Quot.ind
+Nat.add Nat.sub Nat.mul Nat.pow Nat.gcd Nat.div Nat.mod Nat.beq Nat.ble
+Nat.land Nat.lor Nat.xor Nat.shiftLeft Nat.shiftRight
+String.ofList Char.ofNat List eagerReduce Nat String String.mk Char
+optParam autoParam semiOutParam outParam""".split()
+PINS = {"v432/lean": "8c9756b28d64dab099da31a4c09229a9e6a2ef35",
+        "v435": "eb6cafb7290e8bd5f2937522d8d804f58f02bafc"}
+CONFIG = {"challenge_module": MODULES["reference"], "solution_module": MODULES["solution"],
+          "theorem_names": [THEOREM], "permitted_axioms": AXIOMS,
+          "external_kernels": {"con-ron": ["/tools/bin/con-ron", "--verified", "--jobs=2"]}}
+
+
+def digest(path):
+    checksum = hashlib.sha256()
+    with path.open("rb") as f:
+        for chunk in iter(lambda: f.read(1024 * 1024), b""):
+            checksum.update(chunk)
+    return checksum.hexdigest()
+
+
+def checked_manifest():
+    hashes = {}
+    for line in (BUNDLE / "SHA256SUMS").read_text().splitlines():
+        match = re.fullmatch(r"([0-9a-f]{64})  (.+)", line)
+        if not match:
+            raise ValueError("Malformed SHA256SUMS")
+        sha, name = match.groups()
+        path = Path(name)
+        if path.is_absolute() or ".." in path.parts or path.as_posix() != name or name in hashes:
+            raise ValueError(f"Invalid or duplicate manifest path {name}")
+        src = BUNDLE / path
+        if src.resolve() != src or not src.is_file() or digest(src) != sha:
+            raise ValueError(f"Changed or missing file {name}")
+        hashes[name] = sha
+    return hashes
+
+
+def stage(side, project, hashes):
+    index = side + "-files.txt"
+    if index not in hashes:
+        raise ValueError(f"Missing manifest entry for {index}")
+    names = (BUNDLE / index).read_text().splitlines()
+    other = MODULES["solution" if side == "reference" else "reference"] + ".lean"
+    if (MODULES[side] + ".lean" not in names or other in names or len(set(names)) != len(names)
+            or any(not n.endswith(".lean") for n in names)):
+        raise ValueError(f"Invalid {side} source list")
+    for name in [*names, "lake-manifest.json", "lean-toolchain", "lakefile.toml"]:
+        if name not in hashes:
+            raise ValueError(f"Missing manifest entry for {name}")
+        dest = project / name
+        if not dest.exists():
+            dest.parent.mkdir(exist_ok=True, parents=True)
+            shutil.copyfile(BUNDLE / name, dest)
+        if digest(dest) != hashes[name]:
+            raise ValueError(f"Incorrect staged source {name}")
+
+
+def run(command, **kwargs):
+    return subprocess.run(command, check=True, **kwargs)
+
+
+def logged(command, path, **kwargs):
+    print(f"{path.stem} ...", flush=True)
+    with path.open("xb") as log:
+        try:
+            run(command, stdout=log, stderr=subprocess.STDOUT, **kwargs)
+        except subprocess.CalledProcessError as exc:
+            raise ValueError(f"{command[0]} exited {exc.returncode}. See {path}") from exc
+
+
+def replay(prefix, folder, project, hashes):
+    for d in ["home", "tmp", "comparison"]:
+        (folder / d).mkdir()
+    base_env = {"HOME": str(folder / "home"), "TMPDIR": str(folder / "tmp"), "LANG": "C.UTF-8",
+                "LEAN_ABORT_ON_PANIC": "1", "GIT_CONFIG_NOSYSTEM": "1",
+                "GIT_CONFIG_GLOBAL": "/dev/null", "GIT_TERMINAL_PROMPT": "0"}
+    old, new = [prefix / name / "bin" for name in PINS]
+    oldenv, newenv = [{**base_env, "PATH": f"{p}:/usr/bin:/bin"} for p in (old, new)]
+    for version, expected in PINS.items():
+        lean = prefix / version / "bin/lean"
+        if subprocess.check_output([lean, "--githash"], text=True, env=oldenv).strip() != expected:
+            raise ValueError(f"Unexpected {version} toolchain")
+    logged(["sha256sum", "--check", "--strict", "tools.sha256"], folder / "tool-hashes.log",
+           cwd=prefix, env=oldenv)
+    config = {**CONFIG, "external_kernels": {"con-ron": [str(new / "con-ron"), "--verified", "--jobs=2"]}}
+    (folder / "comparator.json").write_text(json.dumps(config, indent=2) + "\n")
+    logged(["python3", "-I", "-B", TOOLS / "prepare-dependencies"], folder / "dependencies.log",
+           cwd=project, env=oldenv)
+    logged([old / "lake", "exe", "cache", "--cache-from=master", "--repo=leanprover-community/mathlib4", "get"],
+           folder / "mathlib-cache.log", cwd=project, env=oldenv)
+    build = project / ".lake/build"
+    for path in build.rglob("*"):
+        if path.is_symlink() or any(s in {".olean", ".ilean", ".ir", ".o", ".a", ".so"} for s in path.suffixes):
+            raise ValueError(f"Unexpected precompiled project object {path}")
+    lock = json.loads((project / "lake-manifest.json").read_bytes())
+    libraries = [build / "lib/lean", *(project / lock["packagesDir"] / p["name"] / ".lake/build/lib/lean"
+                                      for p in lock["packages"])]
+    box = ["bwrap", "--die-with-parent", "--unshare-all", "--new-session", "--ro-bind", "/", "/",
+           "--dev", "/dev", "--proc", "/proc", "--bind", folder / "tmp", folder / "tmp", "--chdir", project]
+    export_env = {**oldenv, "LEAN_PATH": os.pathsep.join(map(str, libraries)),
+                  "LEAN_SYSROOT": str(old.parent), "LD_LIBRARY_PATH": f"{old.parent}/lib/lean:{old.parent}/lib"}
+    exporter = prefix / "v432/bin/lean4export"
+    for side, module in MODULES.items():
+        if side == "solution":
+            stage(side, project, hashes)
+        logged([*box, "--bind", project / ".lake", project / ".lake", "--", old / "lake", "build", "+" + module + ":olean"],
+               folder / f"{side}-build.log", env=oldenv)
+        with (folder / f"{side}.partial").open("xb") as output, (folder / f"{side}-export.log").open("xb") as log:
+            run([*box, "--", exporter, module, "--", THEOREM, *AXIOMS, *PRIMITIVES],
+                stdout=output, stderr=log, env=export_env)
+        partial = folder / f"{side}.partial"
+        with partial.open("rb") as src:
+            header = json.loads(src.readline(65536))["meta"]
+        if (header["lean"]["githash"] != PINS["v432/lean"] or header["format"]["version"] != "3.1.0"
+                or header["exporter"] != {"name": "lean4export", "version": "3.1.0"}):
+            raise ValueError(f"Unexpected {side} export metadata")
+        output = folder / f"{side}.ndjson"
+        partial.rename(output)
+        output.chmod(0o400)
+        (folder / f"{side}.sha256").write_text(f"{digest(output)}  {output.name}\n")
+    log = folder / "comparator.log"
+    logged([new / "lake", "comparator", "--config", folder / "comparator.json",
+            "--challenge-from-export", folder / "reference.ndjson", "--solution-from-export", folder / "solution.ndjson"],
+           log, cwd=folder / "comparison", env=newenv)
+    markers = ["con-ron kernel accepts the solution", "Lean default kernel accepts the solution", "Your solution is okay!"]
+    lines = log.read_text().splitlines()
+    if [line for line in lines if line in markers] != markers or lines[-1:] != markers[-1:]:
+        raise ValueError(f"Missing dual-kernel verdict in {log}")
+    print(f"Both kernels accepted {THEOREM}. See {log}")
+
+
+def main():
+    if sys.argv[1:] in (["-h"], ["--help"]):
+        print(__doc__)
+        return
+    if len(sys.argv) != 3:
+        raise ValueError(__doc__)
+    os.umask(0o077)
+    folder = Path(sys.argv[2])
+    if not folder.is_absolute() or os.pathsep in str(folder) or "\n" in str(folder):
+        raise ValueError("Supply an absolute run path without colons or newlines")
+    folder = folder.resolve()
+    if folder == BUNDLE or BUNDLE in folder.parents:
+        raise ValueError("Use a fresh run directory outside the source project")
+    stage_only = sys.argv[1] == "--stage-only"
+    if not stage_only:
+        prefix = Path(sys.argv[1])
+        if not prefix.is_absolute() or sys.platform != "linux" or not shutil.which("bwrap", path="/usr/bin:/bin"):
+            raise ValueError("Full replay requires Linux, bubblewrap and an absolute tools directory")
+        prefix = prefix.resolve(strict=True)
+        if prefix == folder or prefix in folder.parents:
+            raise ValueError("Use a run directory outside the toolchains")
+    hashes = checked_manifest()
+    if "comparator.json" not in hashes or json.loads((BUNDLE / "comparator.json").read_bytes()) != CONFIG:
+        raise ValueError("Unexpected Comparator target, allowed axioms, or checker options")
+    folder.mkdir()
+    project = folder / "project"
+    project.mkdir()
+    stage("reference", project, hashes)
+    if stage_only:
+        stage("solution", project, hashes)
+        print(f"Verified {len(hashes)} files and staged both source lists in {project}")
+    else:
+        replay(prefix, folder, project, hashes)
+
+
+if __name__ == "__main__":
+    try:
+        main()
+    except (KeyError, OSError, ValueError, subprocess.CalledProcessError) as error:
+        sys.exit(str(error))

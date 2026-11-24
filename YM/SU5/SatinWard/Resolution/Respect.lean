@@ -1,0 +1,160 @@
+import YM.SU5.SatinWard.Resolution.Meetup
+import YM.SU5.SatinWard.Resolution.ScaleW
+import YM.SU5.SatinWard.Resolution.BondFire
+set_option synthInstance.maxSize 28000
+set_option maxHeartbeats 700000
+set_option maxRecDepth 8000
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Buffered.Afterglow.Tower.VacuumSelection.Spine
+open Function Filter Metric NormedSpace SU Lat Lattice Wilson Cube Finset Mir Phase
+open MeasureTheory RP Reflect Advance Nacre Spire Scroll Peaks Rush Tulip Skye Window Vale Girt
+open Push.SectorMeasure RG Lifted Scree ProbabilityTheory Py Py.Rate LocalLimit FullBill Sound
+open Common Ballad Cordial
+open scoped Topology Matrix MatrixOrder Matrix.Norms.L2Operator BigOperators Kronecker
+open scoped ComplexOrder InnerProductSpace NNReal ENNReal Classical
+attribute [local instance] opCStarAlgebra
+open Preparation Journey Satin Fock Analysis SlabMark MeshClock SatinVerification Vacancy
+open Tapestry Germ Alliance Lamour.Bridge.Celeste Designs Twah Prototype
+open Lamour.Bridge.Celeste.Morn
+open CF.Velvet CF.Pannier.Chancel
+open Spine Pitching.Focus QuadClock Ione Vow Swell
+open _root_.Zephyr.Chern
+universe uΩ
+
+
+open Papal CF.Papyrus.Franc.SatinForce CF.Pannier.Chancel Checkers
+
+open CF.Papyrus.Franc.Loaves
+-- CP3 package. PUBLIC, no topology/order changes
+open Moon
+open Horizons FoliageP BareProgram Moonlit Moonlit.SwitchC
+open _root_.YM.Regis.Head.Brecht _root_.YM.Regis.Circuit _root_.YM.Regis.Circuit.SpringDay
+open SlabMark VelourBoard Papal.SkyTax Cygnet VelourWiggle
+open YM.Stationary (Gaia)
+open SwitchC.Garland SwitchC.Garland.Terrace SwitchC.Garland.Terrace.Juniper
+open Abacus CheckerFlag SlopeCharge Maxwell
+open scoped RealInnerProductSpace ContDiff
+namespace Fame
+open BProof Pressure
+namespace Regulator
+
+open _root_.YM.Gleam.Luster.Almanac Grade
+open Papal.SkyTax
+open _root_.YM.Regis.Head
+open _root_.YM.Gleam.Luster.Almanac Grade
+open _root_.YM.CF.Py.Rate.LocalLimit.Preparation _root_.YM.CF.Py.Rate.LocalLimit.Preparation.Tabletop Shrine Ione.Clock Moto
+variable (P:Spine)
+local notation "W★"=>P.calibration
+local notation "Ω★"=>P.run.meter
+open Preparation.Yoke Spine.Gingham Spine.Gingham.Diary
+open ShapeLab ResolutionFrame Shrine 
+open SatinWard
+local notation "R"=> Option Tilted.Ramp
+local notation "T"=> P.calibration
+local notation "ι₀"=>Wage4
+local notation "L"=> P.par.R.L
+local notation "K"=> P.run
+local notation "V"=> P.large
+variable (X:R)
+variable {s v g w:ℕ}(p:Cover)(e:Almanac P s w p)(h:s≤g)
+local notation "Q" => P.calibration.ℓ
+variable {f0:ℕ} {Z:ℕ→ℕ} {η:Type}[Fintype η]{C H A:ℝ}
+variable (pZ:Tendsto Z atTop atTop)(W:Calendrical P C H A f0 η Z){Wq:Bool→ Coords Wage4} {Uq:ℕ→ Bool→ Coords Wage4} {F:ℕ→ℕ}(WX:CriticalClock P C H A g f0 η Wq F Z Uq) (b: Bool)
+include pZ W WX h
+local notation "Yt" => (sprintCost L)
+local notation "k▶" i:max => P.engine ((Z ∘F) i)
+local notation "j▶" i:max => P.nomadic ((Z ∘ F) i)
+omit W WX pZ h
+open Worth Pays BProof Aria Casting MacroGrid
+open Selected
+local notation "ζ"=>P.sidesPerTick
+open Real (exp log)
+-- entrance as manuscript. Replace estimate C/R after point scaling with C/P.
+local notation "T'" i:max=>stride P i
+local notation "λ∗"=> T' v -- risky
+local notation "ℓ" i:max=> moonClock P i
+local notation "Ω" i:max=> hat P.par.R.L P.par.x i
+local notation "f" i:max=> corridorHeight P i
+local notation "Xᵤ" i:max=> polishQ P i
+local notation "R▶" i:max=> corridorR P i
+local notation "β₄" i:max=> (ageBudget P η A C H i)
+local notation "p₀" => billX P.par.R.L
+local notation "P'" => P.par.x
+local notation "t" i:max=> gaugeMesh P.par i
+local notation "ν" => (↑P.par.R.L.val:ℝ)
+local notation "μ"=> sprintCost P.par.R.L
+variable (ρ: Piano P f0 C H A η Z) -- edit
+variable {β wp} {b C':ℝ}{e:ℕ→ℝ}{T₀:P.Register}(T₁: CouncilGrant P T₀ b C' e Z wp β)
+local notation "q'" s:max=> lapQ P.run s
+local notation "h₀" s:max=> tollηw P β s
+local notation "ρ₀" s:max=> (4*ageBudget P η A C H (f s))
+local notation "b₀" v:max=> (β v:ℝ)
+local notation "b₁" s:max=> (Pressure.temp (Ω s))
+private lemma ratio_quest (k:ℕ): ((Xᵤ k)^15:ℝ) ≤ (32:ℝ)^(T' k):=by
+ let p:= Xᵤ k; let n:= T' k; have hv:1≤p:=faderP P k
+ have he: log (32:ℝ) ≥ 3:=by
+    rw [ge_iff_le,←Real.exp_le_exp,Real.exp_log (by norm_num),show (3:ℝ)=1+1+1 by norm_num,Real.exp_add,Real.exp_add]; have e:Real.exp 1≤3:=Real.exp_one_lt_d9.le.trans (by norm_num)
+    exact (le_trans (mul_le_mul (mul_le_mul e e (Real.exp_pos _).le (by norm_num)) e (Real.exp_pos _).le (by norm_num)) (by norm_num))
+ have hn:5*log p ≤ n:= Nat.le_ceil _; change p^15 ≤ (32:ℝ)^n; rw [←Real.log_le_log_iff (by positivity) (by positivity), Real.log_pow, Real.log_pow]; push_cast; nlinarith
+include ρ T₁
+lemma book_credit (r:ℝ)(u:0<r) : ∀ᶠ v:ℕ in atTop,(r*lapQ P.run (f v))*2*((Yt)^(v-f v))⁻¹*(h₀ v)⁻¹*(R▶ v)^4*(Xᵤ v)^5 ≤ 1:=by
+ have hν:0<ν:=Nat.cast_pos.mpr P.par.R.L.property
+ filter_upwards [ (polish_late P).eventually_ge_atTop (4*r), roomρια P, (cue_infinite P).eventually (shift_late P), f_still P, eventually_ge_atTop f0] with v h p z q k
+ let a:=f v; let n:= v-f v; have e:n=stride P v:= q.2; let σ:= Xᵤ v; have hv: 1≤σ:= faderP P v; have hb: 0< (h₀ v):= tollηw_p P ρ T₁ k; have hz: (lapQ P.run a)*(h₀ v)⁻¹ ≤ (2:ℝ)^n*(2*σ^2):=by
+    rw [← div_eq_mul_inv,div_le_iff₀ hb, mul_assoc ((2:ℝ)^n)]; exact (z v q.1.le).trans (mul_le_mul_of_nonneg_left (toll_shift P ρ T₁ v k) (by positivity))
+ have hR: R▶ v ≤ σ*ν^n:=by rw [corridorValue]; exact mul_le_mul_of_nonneg_right p (pow_pos hν _).le
+ have hn: (Xᵤ v)^12 ≤(32:ℝ)^n:=(pow_le_pow_right₀ hv (by norm_num : (12:ℕ) ≤ 15)).trans (e.symm ▸ ratio_quest P v) -- power conversion
+ let y:= μ; have hy:0<y:=sprint_pos _; let M:=moonClock P a; have hV:0 < R▶ v:= div_pos (clockP P a) (gaugeMesh_pos _ _)
+ calc
+    _ = 2*r*(lapQ P.run a*(h₀ v)⁻¹)*(R▶ v)^4*σ^5 / y^n :=by unfold a n σ y; rw [div_eq_mul_inv]; ring
+    _ ≤ 2*r*((2:ℝ)^n*(2*σ^2))*(σ*ν^n)^4*σ^5 / y^n:=by 
+         apply div_le_div_of_nonneg_right _ (pow_pos hy _).le; have he:0≤2*r*((2:ℝ)^n*(2*σ^2)):=by positivity
+         apply mul_le_mul_of_nonneg_right _ (by positivity); exact mul_le_mul (mul_le_mul_of_nonneg_left hz (by positivity)) (pow_le_pow_left₀ hV.le hR _) (by positivity) he
+    _ ≤ 1:=by
+         rw [div_le_one (pow_pos hy _), mul_pow,←pow_mul, Nat.mul_comm n 4, pow_mul]; have hτ: ((2:ℝ)^n* (ν^4)^n)*(32:ℝ)^n ≤ y^n:=by
+            rw [←mul_pow,←mul_pow]; apply pow_le_pow_left₀ (by positivity) _; exact le_trans (le_of_eq (by ring)) (ratio_u P ρ)
+         refine le_trans (?_: _ ≤ ((2:ℝ)^n*(ν^4)^n)* ((32:ℝ)^n)) hτ; refine le_trans ?_ (mul_le_mul_of_nonneg_left hn (by positivity)); change 4*r ≤ σ at h; linarith only [mul_le_mul_of_nonneg_right h (show 0≤ ((2:ℝ)^n * (ν^4)^n)*σ^11 by positivity)]
+open Quire Internal BPress
+local notation "B✔" i:max=> absol P.run i (Real.sqrt (β i))
+-- exposure cost Gamma linking. EXACT eventual le ratio. Verified all supports pλ.
+lemma amplitude (hK:f0 ≤ v): 0 < B✔ v ∧ B✔ v*h₀ v= (Xᵤ v)^4:=by
+ let η':=(h₀ v); have he:= tollηw_p P ρ T₁ hK; have b:= (beta_quarter P (v:=v) T₁).1; let a:=B✔ v; let φ:=Ω v; let Θh:= b₁ v; let q:= lapQ P.run v; let u:=Xᵤ v; have e:0< Θh:=(P.run.meter.a v).threshold_pos.trans_eq ((P.run.meter.boot v).1); have hd:BPress.drift φ=u:=by unfold u polishQ; rw [BPress.drift_eq,BProof.coin_scale]
+ have hv:0< q:=(ρ.date.stock _ hK).1.1; have ho: 1 ≤ u:= faderP P v; change 0<a ∧ a*η'=u^4; unfold a absol; rw [Real.sq_sqrt b.le]
+ change 0 < β v / (q/Θh^2 *((BPress.drift φ)^4:ℝ)⁻¹) ∧ β v /(q/Θh^2*((BPress.drift φ)^4:ℝ)⁻¹) * (q * (Θh^2 * β v)⁻¹)=u^4
+ rw [hd]; constructor; · positivity
+ field_simp
+
+lemma sticker_price (U:ℝ)(u:0<U): ∀ᶠ v:ℕ in atTop, U*(R▶ v)^4*(B✔ v)*(Xᵤ v)* |wageMonth P η A H (f v) v|≤ 1:=by
+ -- choose K'
+ let C:=2* Real.exp (4*totalBudget A (Announcement Wage4 η)+1) * (Tabletop.Harmonic.rentP L A (yardF cloverFrame) H cloverFrame); let r':=U*(|C|+1)
+ have hr:0<r':=mul_pos u (by positivity)
+ filter_upwards [book_credit P ρ T₁ r' hr,(cue_infinite P).eventually_ge_atTop f0,f_still P] with v h t₀ g
+ let s:= f v; let q:= (q' s); let z:= (Yt)^(v-s); let Xv:= B✔ v; have hq:0<q:=(ρ.date.stock _ t₀).1.1; have hz:0 ≤ z⁻¹:=inv_nonneg.mpr (pow_nonneg (sprint_pos L).le _); have hp:0<h₀ v:=tollηw_p P ρ T₁ (t₀.trans g.1.le); have he:0 < Xᵤ v:=zero_lt_one.trans_le (faderP P v); have hV: wageMonth P η A H (f v) v=C*q*z⁻¹:=by unfold wageMonth monthlyRent owedP C q z s; ring
+ rw [hV,abs_mul,abs_mul,abs_of_pos hq,abs_of_nonneg hz,← show Xv=B✔ v from rfl]
+ let w:=(R▶ v)^4; let x':=(Xᵤ v); have hm: Xv=x'^4*(h₀ v)⁻¹:=by rw [←show Xv * (h₀ v)=x'^4 from (amplitude P ρ T₁ (t₀.trans g.1.le)).2,mul_inv_cancel_right₀ hp.ne'] -- tune
+ rw [hm]; apply le_trans _ h; change U*w* (x'^4*(h₀ v)⁻¹)*x'*(|C| * q*z⁻¹)≤ r'*q*2*z⁻¹*(h₀ v)⁻¹*w*x'^5; suffices p: U*|C| ≤ r'*2 by
+    have hv:0≤w:=by unfold w; positivity
+    linarith only [mul_le_mul_of_nonneg_right p (show 0≤ q*z⁻¹*(h₀ v)⁻¹*w*x'^5 from by positivity)]
+ have h0:=abs_nonneg C; unfold r'; nlinarith only [u,h0,hr]
+omit ρ T₁
+variable (D:64≤ P.par.R.L.val)
+include D
+lemma rank_usable (g:ℝ):∀ᶠ i:ℕ in atTop, (g + 2* P.thresholdF i+4) * Xᵤ i ≤ R▶ i:=by
+ let C:ℝ:= Real.log ν; have hu:(64:ℝ)≤ν:=by exact_mod_cast D
+ have hv:1≤C:=by unfold C; rw [← Real.exp_le_exp, Real.exp_log (by linarith)]; linarith only [hu,Real.exp_one_lt_d9]
+ have hx(n:ℕ): 2*n+4 ≤ plateMeter n:=by unfold plateMeter; have c:(n+1) ≤ (n+1)^4:=le_self_pow₀ (by omega) (by decide); omega
+ filter_upwards [(polish_late P).eventually_ge_atTop g,(polish_late P).eventually_ge_atTop 2,(turnover P.par).eventually (leap (w:=0) (p:=1) (q:=0) (forest_rental) (Or.inr (Or.inl ⟨rfl,zero_lt_one⟩))), f_still P] with i h k m v
+ let z:= Xᵤ i; let n:=P.thresholdF i; let y:=stride P i; let w: ℝ:= moonSpan P (f i); have v':2*(n:ℝ)+4≤ z:=by
+    refine le_trans (?_:_≤(plateMeter n:ℝ)) ?_; · exact_mod_cast hx n
+    rwa [←show P.thresholdF i= _ from (P.run.meter.boot i).2.1] at m
+ have q:2≤ z:=k; have hu:0< z:=by linarith
+ have hy:0<ν:=by positivity
+ have he:z^3 ≤ ν^y:=by
+    rw [←Real.log_le_log_iff (pow_pos hu _) (pow_pos hy _),Real.log_pow,Real.log_pow]; have e:5*log z ≤ y:= Nat.le_ceil _; have h₁:0≤log z:= Real.log_nonneg (by linarith); norm_cast at hv; change (↑(3:ℕ):ℝ)*log z ≤ y*C; push_cast; nlinarith only [mul_le_mul_of_nonneg_left hv (show (0:ℝ)≤ y from Nat.cast_nonneg _),e,h₁]
+ have hh:(z^3) ≤ R▶ i:=by
+   rw [corridorValue,v.2]; apply he.trans; exact le_mul_of_one_le_left (by positivity) (one_le_mul_of_one_le_of_one_le (by exact_mod_cast Nat.succ_le_of_lt P.sides_pos) (by exact_mod_cast Nat.succ_le_of_lt (reachM P (f i))))
+ apply le_trans _ hh; change (g+2*(n:ℝ)+4)*z ≤_; change g≤z at h; nlinarith only [mul_le_mul_of_nonneg_right v' hu.le, mul_le_mul_of_nonneg_right h hu.le, mul_le_mul_of_nonneg_right q (sq_nonneg z)]
+end Regulator
+end Fame
+end YM.CF.Buffered.Afterglow.Tower.VacuumSelection.Spine

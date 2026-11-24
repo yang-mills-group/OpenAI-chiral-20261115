@@ -1,0 +1,92 @@
+import YM.CF.Pith.Tax
+
+/- Adapted from YM/CF/Pith/Tax.lean for the NoSlip, capped ScaledV use below. -/
+set_option linter.unusedTactic false
+set_option linter.unusedVariables false
+set_option autoImplicit false
+set_option maxHeartbeats 950000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Jade
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+variable{N P B:Side}{S:StepData (Domain N B) (Domain P B)}{T: Tube SU.group S}{K:Teller SU.group}{G:Ratio (mid N B) (mid P B)}{R:Patch}{L:ChartRatio SU.group}
+variable {d e η t z g A B':ℝ} {j k k' m n l:ℕ}
+variable (V:Grace K R L)
+open Lich.Muster Lor
+open Jet Vol Rel
+local notation "G5"=>SU.group
+variable {x y0 β:ℝ}(pp:BudgetPoint){t₀ v v₁ p11 p22 p3 p4:ℝ}
+local notation "SN"=> Site (Domain N B)
+open Cascade
+open Fief
+open Yaw Pig
+open Wray
+open Lich.Muster Push.AbsoluteSums
+open Iva Eire
+local notation "ζ"=> (radiusB x)
+open Trees Footprint Iva Eire
+variable (F:Pilot)(Z:Pluck R) (I: Stake.Isle){σ:ℝ}(Q: Tun I Z F σ){H:Muster G S x d T}
+variable {U:Grasp V.U B d}{W:GivenX V U}{X: GramM (mid N B)}{Y: GramM (mid P B)}(M: Sheep V U W G Y.J X.J (k+2) n A)(P_:∀ X: Support (Domain P B),Lend P B d X)
+variable {r:ℕ}
+variable (w':Hive.Vista U Y.J.M Y.J.P P_ (k+2) M.q ((Fintype.card Play:ℝ)*t) M.lot M.tone)
+variable (V_:ℝ)
+local notation "Φ"=> F.hat R x
+variable(Y1: Monk SU.group S)
+-- Rflare independent of Y except Bravo, discounted pref before.All
+variable {a A' ε b α γ:ℝ}{q q':Chi}{u u0 s:ℝ}(ε':Fend V H M Z F q Y.p X.p γ α j l r)
+variable{G₀:Scree.Loom (mid N B)}{G₁:Scree.Loom (mid P B)}(D_: Girt.BaseL U G Y G₀ G₁ q' u)(L0: StageP V H Y X U)
+variable (k₀ k₁:ℕ)(s0:ℝ)(A_: Roof (mid N B) s s0 k₀ G₀)(A₁: Roof (mid P B) s s0 k₁ G₁)(heV:k₀+k₁ ≤ radiusB x)(pV:1<I.fine)(k_W:5*Y.p.B +4≤10*radiusB x)(η':l≤18)(ss:s ≤ s0)(tK:s0 < d)(hT:0 < s) (pT:0<u)(hU:u< firstRadius SU.group)
+variable (Uq:(j+110)*radiusB x+14 ≤ r) (pQ:2*((j+5)*radiusB x) ≤ r)(ht:0 ≤ V_)(hY:Y.p.order=k)(pX:X.p.order=k)(hK:radiusB x ≤ X.p.B)
+variable (P_B:Stake.PondP V F x s u j l (k+2)) (K0: Troupe S r (Words S))(P0: Eire.Ride S)
+open Plume
+open Nor
+variable {c vL:ℝ}(Pz: Folk S r (Words S)→ Track (Eire.Ride S) ℝ)
+open scoped Classical
+variable {γ':ℝ}
+variable (h0:vL=(tolQ X.p).supportExponent+γ')(uQ:X.p.B=radiusB x)(p0:0<γ')
+local notation "Ue"=> Troupe S r (Words S) → Palot.leaf (Site (Domain N B)) → Raid (LeanV (Single (mid N B)))
+local notation "Ωe"=> Troupe S r (Words S) → Palot.leaf (Site (Domain N B)) → Orbit (mid N B) → Cipher (mid N B)
+-- Ribbon vector measured local Aux Proto.SP.Anchor.Norin. Does not assume vacuum.
+open Vow Bake
+variable (KcV:Troupe S r (Words S) → Palot.leaf (Site (Domain N B)) → Raid (LeanV (Single (mid N B))))(F':Troupe S r (Words S) → Palot.leaf (Site (Domain N B)) → Orbit (mid N B) → Cipher (mid N B))(Pinc: GroV V F Z M P_ w' ε' D_ KcV F' V_ c γ')
+local notation "Zκ"=> pence_v X.p KcV V_
+local notation "Zp"=> cone_f F'
+include Pinc ht
+local notation "Ωq"=> Troupe S r (Words S)
+local notation "Xm"=> tolQ X.p
+local notation "Wit"=>taxV X.p KcV V_
+local notation "PW"=> grain_q X.p.B X.p.order X.p.power γ' c
+variable {Hh Kk:ℝ}(h_:Kk ≤Hh)(kK:1 ≤Kk)(Z_ : ScaledV (fun i => min Hh (stampY Hh Kk i)) (tolQ X.p) V_ c x γ' KcV)
+include uQ Z_ kK h_
+lemma frost_Q_Th (o:Seat (mid N B))(i:Finset Ωq)(m:ℕ)(p:ℝ)(h:∀ j∈i,Palot.outC m j ∧ p ≤ min Hh (stampY Hh Kk j)) : p*tallB (fun j:Aura (mid N B)=>∑ t∈i,Wit j t) X.p.B (tolQ X.p).supportExponent o ≤ PW m:=by
+ let U:= Xm; let H:= Wit
+ have hx(v):0≤ stampY (S:=S) (r:=r) Hh Kk v:= zero_le_one.trans (shelfX v _ _ (kK.trans h_) kK)
+ have hv:= tax_v V F Z M P_ w' V_ ε' D_ ht KcV F' Pinc
+ unfold tallB; let f':=univ.filter fun q:Aura (mid N B)=>o∈ q.val; let P':=U.supportExponent
+ let L:=univ.filter fun i:Ωq=> Palot.outC m i; let Wv(q:Ωq):= min Hh (stampY Hh Kk q)
+ let Tx(v:Ωq):=Wv v*(∑ j∈f',H j v * Trees.currency X.p.B P' j.val)
+ have hp': (p * ∑ j∈f', (∑ t∈i,H j t)* Trees.currency X.p.B P' j.val) ≤ ∑ v∈L,Tx v:=by
+    simp_rw [sum_mul]; rw [sum_comm,mul_sum]
+    apply le_trans _ (sum_le_sum_of_subset_of_nonneg (f:=Tx) (show i ⊆ L from fun j v=> mem_filter.mpr ⟨mem_univ _,(h j v).1⟩) (fun j _ _=>mul_nonneg (le_min (zero_le_one.trans (kK.trans h_)) (hx _)) (sum_nonneg fun l _=>mul_nonneg (hv l j) (Real.exp_pos _).le)))
+    refine sum_le_sum fun j v=> mul_le_mul_of_nonneg_right (h j v).2 (sum_nonneg fun l _=> mul_nonneg (hv l j) (Real.exp_pos _).le)
+ apply hp'.trans
+ unfold grain_q; have hL:= mul_le_mul_of_nonneg_left (Z_ o m (fun i j=>fastV j) (fun i j=>fastX j)) (spicy_f X.p.order)
+ rw [show X.p.B=_ from uQ]; apply le_trans _ hL; rw [mul_sum]; refine sum_le_sum fun i u=>?_
+ unfold Tx f'; rw [mul_sum,mul_sum]; refine sum_le_sum fun j q=>?_ ; unfold H taxV BudgetPoint.mass Trees.currency Wv; change _ ≤ _ * (_ * (Real.exp ((tolQ X.p).supportExponent* (coverNumber X.p.B j.val:ℝ))* _)); exact le_of_eq (by unfold P' U tolQ; unfold Scree.tariff; dsimp; ring) -- radiusB tune
+end YM.CF.Jade
+end

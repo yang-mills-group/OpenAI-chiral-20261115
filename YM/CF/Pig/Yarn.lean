@@ -1,0 +1,147 @@
+import YM.CF.Pig.Rank
+set_option autoImplicit false
+set_option maxHeartbeats 400000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Pig
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+variable{N P B:Side}{S:StepData (Domain N B) (Domain P B)}{T: Tube SU.group S}{K:Teller SU.group}{G:Ratio (mid N B) (mid P B)}{R:Patch}{L:ChartRatio SU.group}
+variable {d e η t z g b c A B':ℝ} {j k k' m n l:ℕ}
+variable (V:Grace K R L)
+open Lich.Muster Lor
+open Jet Vol Rel
+local notation "G5"=>SU.group
+variable {x y0 β:ℝ}(pp:BudgetPoint){t₀ v v₁ p11 p22 p3 p4:ℝ}
+local notation "SN"=> Site (Domain N B)
+open Cascade
+open Fief
+variable {X: Interest (mid N B)}{Y:Interest (mid P B)}{U: Grasp V.U B d}{W:GivenX V U}
+variable (M: Sheep V U W G Y X k n A)
+local notation "sN"=>mid N B
+local notation "θo"=> Hest.Budget R.L R.odd_side Y.P.den X.P.den G Y.M K.j
+local notation "Δ"=> shipA G U Y.M Y.P.den Y.I X.I
+local notation "TΦ"=> (Thera.yet_one)
+-- expose program β for ALL basis. Output C history ζ trial independent. avoid choices depend on post path.ClockB. Stencil projection sizes. Integrated maturity of L.
+open Corne
+-- STEP TAKE. define substance tested with Apert budgets.B. K n with k in Sheep input. Not requiring CPS mu on β.L.path
+variable {ρ α γ:ℝ}{F:Pilot}{Z:Pluck R}{P₁ P₂:BudgetPoint}
+local notation "τ"=> (radiusB x)
+open Girt Eire
+variable {H₀: GramM (mid P B)}{H₁:GramM (mid N B)}{G₀:Scree.Loom (mid N B)}{G₁:Scree.Loom (mid P B)}{pK L':ℝ}{q q':Chi}{H:Muster G S x d T}
+-- aura needs kernel shape equality.SO. stage.L0.
+variable(Mk:Monk SU.group S)(A₀:Ids (mid N B))(T₁:Ids (mid P B))
+variable{r:ℕ}
+variable{M_:Sheep V U W G H₀.J H₁.J (k+2) n A}
+variable (D_: BaseL U G H₀ G₀ G₁ q' pK)(u:Fend V H M_ Z F q H₀.p H₁.p γ α j l r)(L0: StageP V H H₀ H₁ U) (U_:∀ X: Support (Domain P B), Lend P B d X)(w':Hive.Vista U H₀.J.M H₀.J.P U_ (k+2) M_.q ((Fintype.card Play:ℝ)*L') M_.lot M_.tone)
+local notation "Gv"=> ArchL D_ u.head.scaleP H
+local notation "v'"=> ((H.post+90)*radiusB x)
+local notation "r'"=> (Z.r2*radiusB x)
+local notation "k''"=>Z.N1*radiusB x
+local notation "T2"=> 20*radiusB x
+local notation "L2"=> shotM H.vita (F.hat R x) H₀.beta
+local notation "Θ"=> fun i:Words S=>vast (k:=(Z.N1*radiusB x)) H i
+local notation "Zt"=> H.trot
+local notation "Yt"=> H.room
+include D_ u U_ w'
+open Yaw
+variable(O: Ride S)
+local notation "Υ"=> Stilo.bay O
+variable {a u1 s s0 c t:ℝ} (p:‖Mk.z‖ ≤F.hat R x) (η':l≤18)
+variable {k1 k2:ℕ}(A_:Roof (mid N B) s s0 k1 G₀)(A₁:Roof (mid P B) s s0 k2 G₁) (pR:k1+k2 ≤ radiusB x)(hT:0<pK)(ht':pK < firstRadius SU.group) (W1:a<s)(y:0<u1)(u_:u1 < pK)
+variable (v_:∀ (N': Monk SU.group S), Chir N' x → ‖N'.z‖ ≤ F.hat R x → Bell S N' x T H.trot H.room H.post H.beta a u1)
+variable {E:Type}[NormedAddCommGroup E][NormedSpace ℝ E][FiniteDimensional ℝ E](I:E→L[ℝ] Directions SU.group (Domain N B)) (J:List (Kite S r)) (hJ:Mk.key=cook S J.toFinset)(hQ:(Stilo.bay O)∩RG.flags (temp x) Mk.V=Mk.key.flags)(hv:∀ i∈J.toFinset,Lattice.halo ((H.post+90)*radiusB x) (Eire.frameP S i)⊆Stilo.bay O)
+local notation "Γ"=> (erosion ((H.post+70)*radiusB x) (Stilo.bay O))
+local notation "L_"=> ((Mk.V,Mk.U,H.beta,Mk.z):HomeL (Domain N B) (Domain P B))
+variable (v1:‖I‖ ≤ 1)(u1_:∀ t:E, axl Mk.key.flags (temp x•I t)=temp x•I t)
+local notation "D₂"=> (erosion 15 (Stilo.bay O))
+-- ABI.Gurus and proof for actual $Mk in Ψ synt. Rig grant requires mark & Conv R.B.Doc support.SO
+local notation "τ₀"=> shotM H.vita (F.hat R x) H.beta
+variable (Ip: Stake.Isle)(K₁:Dew F Z)(K₂:BillR R Ip){σ Dβ C:ℝ}{mE:ℕ}(P_:Pail.Payment R σ)
+local notation "ψ'"=> paidL Ip K₁ K₂ k x Dβ
+open Rink Lor Fief -- tune
+variable(Vg: Palot.leaf (Site (Domain N B))→ℝ)(Vx:Palot.leaf (Site (Domain N B))→ℝ)(B₁: mSeal P B→ℝ)(B_:mSeal P B→ Toll (Single (mid N B)))
+variable (dB:ℝ)(J_:ℕ)
+local notation "cM"=> Eire.trot S Mk (Forge.cusp Mk.key x Mk.V)
+variable (pB:1< Ip.fine)(tB:Sheet.isle M_=Ip)(p2_:2*((j+5)*radiusB x) ≤r)
+local notation "Jq"=> (fun i:E=> Mk.atop (I i) x)
+open Rink
+variable {Ip_:Stake.Isle}{rG q0:ℝ}{j0:ℕ}{F_':Tun Ip Z F σ}
+-- Supported wherever Root Ξ qualifies. excludes synt outside Flag.Inc.E cost.Yields.PARAM later.
+variable (Yt_: Yields V Ip Z F H F_' U H₀.J H₁.J q q' pK s k j J_ Vg Vx B₁ B_)(uZ:0<s)(v0_:s0 < d)(vY:∀ (Y:Monk SU.group S), JointB G (ArchL D_ u.head.scaleP H Y A₀ T₁).val.1 s0)(heV:s ≤ s0)
+variable (Ξ: Support (Domain N B))(hξ:Ξ⊆ Stilo.bay O)(fV: ∀ v:E, Agrees (halo 12 (halo (4*radiusB x) Mk.key.flags)) Mk.V (Mk.atop (I v) x).V)
+local notation "ZY"=> F_'
+local notation "ΘV"=> (fun fŧ=>onK (ArchL D_ u.head.scaleP H fŧ A₀ T₁))
+variable {T3:Monk SU.group S}
+-- NEED A.D.Actual markers support with N carrying synthetic.Separate Basic.A.P. collinear.V cues.For all ky.L.Trial.
+variable (Nq:E→Monk SU.group S)(UL:List (Rust (mid P B)))(WL:List (Words S))(Kc : ∀ O:Hos S r, Sweep (mid P B))(While : ∀ O:Hos S r, Support (Domain P B) →ℝ)(Bη: Rust (mid P B) → Raid (LeanV (Single (mid P B))))
+local notation "W₀"=> (weave_g J UL WL).toFinset
+local notation "X₀"=> Θ
+local notation "Ωr"=> (fun i:E=>GroupD (Nq i) A₀ T₁ D_ u U_ w')
+variable (XK: LightP)
+local notation "J₀"=> Mk.key
+open PetalP
+-- explicit Budgets.Light. inheritance.E gift apparatus.VZ Root fits actual Tier.Power.Dir. assume only HEV. 
+variable (vH:∀ i:E, Eire.trot S (Nq i) (cook S J.toFinset)=Mk.atop (I i) x)
+-- payouts
+include Yt_ vY uZ v0_ A_ A₁ heV pR pB tB
+include p η' hJ fV v1 vH u L0 u1_
+local notation "HT_"=> F.hat R x
+include hT ht'
+-- α earnings. Hel.Root.Disk B have f.ghost.Op.Power. Keep thermostat φ.condition prior ancestry.E inherited. Need Credits per all orientations.K_w.When Measures.
+variable (Y0:Mk.V∈Rue.litres (temp x) (Stilo.bay O) Ξ)(uT:(Plume.walksK (S:=S) (r:=r) T₁).filter (fun j=> j∈ liftK S J.toFinset)=J.map Prod.fst)
+local notation "Lc"=> LuX (H:=H) (k:=k) (j:=j) (r:=r) Mk Ip Vg Vx B₁ B_ J_ (F.hat R x) F_'
+local notation "ΨC"=> (fun i=>gift_k i (Bη i) F_'.dust.glam F_'.dust.toil k)
+open Dress Rue Iva
+variable (P0:∀ i∈UL,∃ x y:ℝ,Yaw.Beat_ H₀ i (Bη i) x y)(pC:0≤Bη)(lα:H₀.p.order=k)(k_W: 5*H₀.p.B +4≤10*radiusB x) -- Need r includes (j+110)*+14
+variable (Uq:(j+110)*radiusB x+14≤r)
+variable (v0:∀ i∈J, Hive.chip (danceL S i.1.val r) T₁=Kc i.1 ∧ (∀ x,Hive.fits (landX (k+2) M_.top (danceL S i.1.val r) d) (home_n _) (danceL S i.1.val r) (press_s U_ _ T₁ (Kc i.1) x))∧ Pro (landX (k+2) M_.top (danceL S i.1.val r) d) i.2.1 (strokeC d (danceL S i.1.val r) i.2.1 M_.dyes T₁) (While i.1 i.2.1))
+include hξ u1_ p Y0 v0 η' lα k_W P0 pC
+lemma curve_e (h: Palot.fits (BranchX S X₀ v') (weave_g J UL WL).toFinset O) (v:∀ᶠ i in 𝓝 (0:E), Eire.capG S (flags (temp x) (Nq i).V) (chillB (Nq i)) H₀.p.threshold (weave_g J UL WL).toFinset O):∀ i∈UL, Woody k (fun y:E=>(schoolK X₀ H₀ Nq Ωr x H.post (weave_g J UL WL).toFinset (sentR i) y).val) 0 (gift_k i (Bη i) F_'.dust.glam F_'.dust.toil k):=by
+ let W:=Yt_.strength; let X:=Yt_.coil; let L_B:= F_'.dust; let V_:=u.head; let B2:=u.fireK; let hQ:=u.pal
+ have hx:= X.worth cM (show Chir cM x from rfl) p|>.2; let p1:=L_B.yield* H₀.p.threshold; let C:=L_B.scale; intro i ht
+ apply Yaw.canon_v (K:=C) (f:=F_'.dust.tool) (q:=H.trot) (τ':=L_B.pole*fiery SU.group x R.L) J hJ O I T₁ UL WL Θ H₀ Nq Ωr vH Bη L0.wC.symm (fun i=> ⟨rfl,rfl,rfl,rfl⟩) h v P0 pC lα W.pawn W.gain ?_ ?_ W.gala le_rfl W.sky W.ve W.v ?_ ?_ k_W (B2.worn _ V_.cert|>.2.1) B2.blade (v1.trans W.sky) W.sky hx.1 hx.2 ?_ i ht -- tune beta point.I phi.R.
+ · rw [u.height]; exact X.sail
+ · rw [u.pal.ward]; exact W.gear
+ · unfold Rill.Cash; rw [←mul_assoc]; exact mul_le_mul_of_nonneg_right W.hugs H₀.p.threshold_pos.le
+ · rw [u.height]; exact X.seed
+ rw [u.height, mul_right_comm]; exact mul_le_mul_of_nonneg_right W.post B2.horizon.le
+include p2_ Uq uT
+set_option maxHeartbeats 900000 in
+lemma duly (s:(0:E)∈ tsupport (fun i=> (Ωr i).blazon x H.post (weave_g J UL WL).toFinset O)): MixedL Θ J UL WL (k+2) Kc While M_.dyes U_ T₁ (fun i=>gift_k i (Bη i) F_'.dust.glam F_'.dust.toil k) (LuX (H:=H) (k:=k) (j:=j) (r:=r) Mk Ip Vg Vx B₁ B_ J_ (F.hat R x) F_') 0 k O Nq H₀ Ωr x H.post M_.X M_.Y F_'.dust.wage M_.top s0:=by -- tune
+ let W:=Yt_.strength
+ let V_:= u.head; let B2:=u.fireK
+ let A0:= F_'.dust; have hx0:= Yt_.coil.worth cM (show Chir cM x from rfl) p|>.1
+ have hA : (∀ i, let f:E→ Monk SU.group S:= fun z=>Mk.atop (I z) x; ((Ωr i).coats W₀) = ArchL D_ V_.scaleP H (f i) A₀ T₁):=by
+    intro i f; unfold coats; change ArchL D_ V_.scaleP H (Eire.trot S (Nq i) (penn S (weave_g J UL WL).toFinset)) _ _=_; rw [show penn S (weave_g J UL WL).toFinset=cook S J.toFinset from (by rw [penn,left_i]),vH] -- tune
+ refine appointmentM V_.scaleP J hJ O I T₁ A₀ UL WL Θ Ξ hξ Y0 H₀ Nq Ωr L2 vH (fun i=>?_ ) (fun i=>?_ ) L0.wC.symm (fun i=>⟨rfl,rfl,rfl⟩) A0.wage (certainty A0 x R.L) F.s A0.knot F.cost M_.top H.vita G₀ Kc While M_.dyes U_ ΨC (LuX (H:=H) (k:=k) (j:=j) (r:=r) Mk Ip Vg Vx B₁ B_ J_ HT_ F_') M_.X M_.Y (Nat.le_of_add_right_le (enough_t u)) B2.blade (show (H.loft+110)*radiusB x+14 ≤ r by rw [u.pal.town]; exact Uq) M_.qpay v0_ (fun i=>⟨rfl,rfl⟩) (Eventually.of_forall (fun v=>uT)) (Eventually.of_forall fun i=>⟨rfl,rfl,rfl⟩) v0 ?_ A_ A₁ (V_.cert.got.symm ▸ B2.horizon) (V_.cert.got.symm ▸ Yt_.dusk) (by omega) ht' hT heV (B2.worn _ V_.cert|>.2.1) fV W.hi le_rfl v1 (by rw [one_pow,mul_one]; exact Yt_.coil.stock) W.vW W.vw W.vp (by rw [one_pow,mul_one]; exact Yt_.coil.strength) (by rw [one_pow,mul_one]; exact Yt_.coil.root) (fun i v=>W.duty i _ v) ?_ ?_ s -- tune binder.X
+ · rw [hA i]; exact show Clan G S (T:=T) _ _ _ _ _ _ _ q' _ x _ _ _ _ from rfl
+ · dsimp only; rw [hA i]; exact ⟨vY _,A₁.paid _⟩
+ · intro i g v wh ht; apply wh
+   let p' :=Mk.atop (I v) x
+   change heedP H (Eire.trot S _ (cook S J.toFinset)) _ _ _ _ _ _ _ _=0; simp_rw [vH v]; -- beta.L
+   have he:senseC H p' r _ _ L2 i=0:=ht -- tune ht
+   unfold heedP rootK; rw [he]; simp only [Complex.ofReal_zero,zero_mul]; exact mul_eq_zero_of_left (show Pastry.hollow (n:=LeanV (Single (mid N B))) 0=0 from Subtype.ext (zero_smul ..)) _
+ · intro p' h'; exact ⟨mark_r V Mk u O p η' (half_lt_self uZ) (half_pos hT) (half_lt_self hT) Yt_.morn J hJ p' h',hx0.1,hx0.2⟩ -- tune args
+ intro g t he; have ht:= t.self_of_nhds; have hp:penn S W₀=Mk.key:=by rw [hJ,penn,left_i] -- ox
+ have Hc:(Stilo.bay O)∩RG.flags (temp x) Mk.V=Mk.key.flags:=by
+    have hx:(Nq 0).V=Mk.V:=by rw [show _=(Mk.atop (I 0) x).V from congrArg Monk.V (vH 0)]; simp [Forge.Monk.atop,Vmove]
+    rw [inter_comm,←hx]; exact ht.2.2.trans (hp ▸ rfl) -- check
+ let hz(i)(g0:i∈J.toFinset): halo ((H.post+90)*radiusB x) (Eire.frameP S i) ⊆ Stilo.bay O:= lodX S X₀ g (Sum.inl i) (mem_toLeft.mp (by rw [left_i]; exact g0))
+ refine ⟨curve_e V Mk A₀ T₁ D_ u L0 U_ w' O p η' A_ A₁ pR hT ht' I J hJ v1 u1_ Ip Vg Vx B₁ B_ J_ pB tB Yt_ uZ v0_ vY heV Ξ hξ fV Nq UL WL Kc While Bη vH Y0 P0 pC lα k_W v0 g t,?_⟩ -- tune
+ exact rueD V Mk A₀ T₁ D_ u L0 U_ w' O p η' A_ A₁ pR hT ht' I J hJ Hc hz v1 u1_ Ip Vg Vx B₁ B_ J_ pB tB p2_ Yt_ uZ v0_ vY heV fV Nq UL WL vH he ((left_i J UL WL) ▸ht.1) g -- tune
+end YM.CF.Pig

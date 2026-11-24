@@ -1,0 +1,168 @@
+import YM.SU5.Selected.Fortify
+
+/-! # General consultation for up to two tiles. Based on `Vintage.wineGod`;
+reuses estimates but with denser payment condition on that election. -/
+
+set_option autoImplicit false
+set_option maxHeartbeats 1050000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Py
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+open Lich.Muster Lor
+open Jet Vol Rel
+local notation "G5"=>SU.group
+open Cascade
+open Fief
+open Yaw Pig
+open Wray
+open Lich.Muster Push.AbsoluteSums
+open Iva Eire
+open Trees Footprint Iva Eire
+open Jade
+open Oath Feu Feu.Corset Nor
+open Chaff Gloss Maize Tye RP RP.Str
+open Brace
+namespace Rate
+open Pitching Focus CF.Mint
+namespace LocalLimit
+open Preparation
+open Pannier
+local notation "G🌸"=> SU.group
+variable {P:Preparation}{l:ℕ}(Y:Course P (VolumeCape.Dream.Nimbus l))
+namespace Papal
+open Buffered Afterglow Journey
+open scoped ComplexOrder
+open CF.Pannier.Chancel
+open CF.Pannier.Chancel.Cliplet
+variable (H:Real.exp 1≤ P.x)
+variable {A δ ε γ h R κ e a:ℝ} {w d t q l0:ℕ} -- λ' inner
+local notation "κI" i:max s:max k:max => (gram Y s i k).J.M
+local notation "SN" i:max s:max => Papal.count Y s i
+private lemma tender_2(s i k:ℕ)(f:Ferry Y s i k): Twosome (tent Y H) (Papal.count Y s i) (solder Y i k f.depth s):=by
+ let m:=momentm Y i s; let K₀:=tent Y H; let X:=collector Y H i k f.depth s; let F:=solder Y i k f.depth s; have ht:=boxprice Y H i k f.depth s f.fire f.enters
+ apply across K₀ m F (terrain Y H (Y.ir i) s) (Y:=X) (fun x=>rfl); exact fun a z _ p=>Metered.twiceX ht a z p
+where across (K:Calibration)(m:Side){n:Side} (X:Mark n→ℂ)(p:K.c m=n){Y:Mark (K.c m)→ℂ}(h:∀ f,Y f=X (p▸f)) (g:Twosome K (K.c m) Y):Twosome K n X:=by subst n; rw [show X=Y from Eq.symm (funext h)]; exact g
+
+abbrev ratioFort (d:ℕ):= innerRatio d / 16^4
+lemma ratioFort_price(d : ℕ): 0< ratioFort d ∧ ratioFort d ≤ innerRatio d := by
+  have he:= innerRatio_pos d
+  constructor
+  · unfold ratioFort; positivity
+  unfold ratioFort; exact div_le_self he.le (by norm_num)
+
+private lemma mood2 (q d w l:ℕ)(r:l ≤ q)(f:w+d+1≤q)(u:ℕ)(n:Side)(g:(More n).val^4 ≤ u*(4*(breadth (payout d q w) l+l))^4):
+    (↑(u*q^4):ℝ)≥ ratioFort d * sites n:=by
+  let ν:=4*(2*payout d q w+l)
+  have hp:sites n ≤ ((u*((16*ν)^4):ℕ):ℝ):= by
+    unfold sites
+    have hh:4*(breadth (payout d q w) l + l)≤16*ν:=by unfold ν breadth; omega
+    exact_mod_cast le_trans g (Nat.mul_le_mul_left u (Nat.pow_le_pow_left hh 4))
+  have ht:= width_cost f r; apply (mul_le_mul_of_nonneg_left hp (ratioFort_price d).1.le).trans
+  have hh: (ν:ℝ)^4*innerRatio d ≤ (q:ℝ)^4:= ht.trans_eq (by push_cast; rfl)
+  have hv: ratioFort d * ((u*((16*ν)^4):ℕ):ℝ) = (u:ℝ)*((ν:ℝ)^4*innerRatio d):= by unfold ratioFort; push_cast; ring
+  rw [hv]; push_cast; exact mul_le_mul_of_nonneg_left hh (Nat.cast_nonneg u)
+
+structure CoupleCost (γ R : ℝ) (a : Axis) (d q w s i k:ℕ) (z:SU.Slot) : Prop where
+  price : let B:=payout d q w
+          let J:=addgap (tent Y H)
+          let o:=scheduled B J
+          let F:=taggin Y s i k q d w o z
+          Cliplet.Perron P.K.j (gram Y s i k).J.M w d (max P.J.n (B+1)) γ (gram Y s i k).p.threshold F ∧
+            (∀ X:Fields _, ‖F.frame X‖ ≤ (1+R)^(q^4)) ∧
+            ‖Journey.compass Y i k s (Buffered.reflMark a 0 F.frame * F.frame)‖ ≤ 1/2000
+
+lemma wineLaunch (j:Axis) {A T:ℝ}
+    (m:h ≤ P.h)(v:Inflation A P)(Z:δ≥ P.d)
+    (Ft:∀ᶠ n:ℕ in atTop,∀ (N:Side),n≤N.val→Winter P.K.j δ N γ w ε ∧ ∀ M:Tulip.Male,∀ b S,Sparse d S→ HearthB R (sp b P.K.j M (1:Pane N)) S)
+    (c:0 < γ)(Q:ε*R ≤ 1/3)(t': ε*(2*R+4*R*R)≤e^3)(hp:0<e)(vz:e ≤ 1)(pr:h=e⁻¹)
+    (g0: 0≤a)(uz:e*(2*R+3)≤ Real.exp (-2*(a+R)))(vT:a*ratioFort d ≥ T)(g: sealPrice P.V P.W - T+ blossom P.K+(A+1) ≤ -5001)(pR:0<R)
+    (hq:0<q)(gq:(w+d+1) ≤ q)(vq:addgap (tent Y H)≤q) :
+    ∀ᶠ s in atTop,∀ᶠ i in atTop, ∀ᶠ k in atTop,(Y.voyage i).kick≤k ∧ s ≤ Y.uv k ∧ (∀ b (S:Finset (Seat (Papal.count Y s i))), Sparse d S→HearthB R (sp b P.K.j (gram Y s i k).J.M (1:Pane (Papal.count Y s i))) S) ∧
+      ∀ z:SU.Slot, CoupleCost Y H γ R j d q w s i k z:=by
+ subst h
+ let B:=payout d q w; let ℓ:= max P.J.n (B+1); let I₀:=(4*(ℓ+ℓ+1)^4*q^4:ℕ); let κ:= (a+R)*(I₀:ℝ); have hm:0<B:= by unfold B payout; omega; -- omega due nonlinear count? +1
+ obtain ⟨τ0,hτ,u⟩:= stampG_price B γ c; let x:= hat P.R.L P.x; let V(s i k):=(gram Y s i k); have hx:Tendsto (fun s:ℕ=>temp (x s)) atTop (𝓝 0):= (show Tendsto temp atTop (𝓝 0) by simpa using Work.E09.radiusB_temp 0).comp (turnover P)
+ let H':=tent Y H; let J:=addgap H'
+ obtain ⟨n,hK⟩:=Ft.exists; obtain ⟨n',un⟩:= flatAcross P.K.j (P.kJ ▸ (by decide))
+ filter_upwards [measured Y v (inv_pos.mpr hp |>.le) m κ, hx.eventually (ge_mem_nhds hτ),hx.eventually (ge_mem_nhds P.J.ht)] with s hZ xZ xP
+ let E:= n+n'+2*(B+1)+(breadth B J)+J+4*(2*(d+1)*q)+1
+ filter_upwards [hZ,(count_grows Y s).eventually_ge_atTop E, shelfF j Y H s B] with i gV eI fit
+ let Ns:=Papal.count Y s i; let N₁:= (More Ns).val; have hv: E ≤ Ns.val:=eI; have hi:N₁=Ns.val*2:=rfl
+ obtain ⟨F₀,F₁⟩:= hK Ns (by omega)
+ let W:Seat Ns→ℕ:=fun _=>0
+ have hU (k):Sparkle Ns P.d (κI i s k) P.K.j := P.U.broadness _ (P.J.gran.trans ((Y.voyage i).ownership s).size) _
+ let D:=(1+R)^((More Ns).val^4*(q^4))
+ let G:= Real.exp (-5001*sites Ns)/D; have hg:0<D:= by unfold D; positivity
+ filter_upwards [ferry_later Y s i, thaw_plot Y G (by unfold G; positivity) s] with k S φ
+ let X₀:=Journey.compass Y i k s; let Y₀:= solder Y i k S.depth s
+ have hn:StageTw H' Y₀ P.K.j R d (κI i s k):= ⟨tender_2 Y H s i k S, un Ns (by omega) _,F₁ _⟩ -- F₁ s b?
+ let MU:= κI i s k; let th:=(gram Y s i k).p.threshold; have he: th=temp (x s):= ((congrArg BudgetPoint.threshold (prices_plot Y s i k S.enters).1).trans (Y.meter.boot s).1); have hχ(i):IsStarProjection (sp i P.K.j MU (1:Pane Ns)):=raft i ((hU k).projection 1 (guard0 P.dpos.le))
+ refine ⟨S.depth,S.enters,F₁ (κI i s k),fun z=>⟨?_⟩⟩
+ let o:=scheduled B J
+ let F:= taggin Y s i k q d w o z; let O:= wrap (More Ns) (Lifted.nodeC o); have heQ:F.broad=BlockP B O:=rfl
+ let V':= VolumeX ((wrap Ns) ∘ booty o d q)
+ obtain ⟨u',t,w'⟩:= feast (n:=Ns) (d:=d) (q:=q) (by omega) o w
+ have hf:Cliplet.Perron P.K.j MU w d ℓ γ th F:= by
+    apply repastPrize (p:= (show Sparse d V' from t)) (d:=(show Injective F.birth from u')) (g:=w') (w:=le_max_right ..); -- D want
+    exact fun V=>u th (gram Y s i k).p.threshold_pos.le (he ▸ xZ) (by omega) (le_max_right ..) O V
+ have hy: breadth B J + addgap (tent Y H) ≤ Ns.val:=by change breadth B J + J ≤_; omega
+ have hr:0<q^4:=pow_pos hq _
+ let X' := [F.mirror j 0,F]
+ have hx: F.broad⊆ band Ns j 0 (tent Y H).ℓ:=fit
+ have hc: Flight P.K.j MU w d ℓ γ th X':=by
+    let hF:= Flight.alone hf; exact (hF.reflect j 0 (un Ns (by omega) MU j 0) (F₁ MU)).tack [F] hF (by
+      rw [Flight.reflect_consistent]
+      simp only [whereV,List.foldr_cons,List.foldr_nil,union_empty]
+      exact west H' j 0 F.broad hx)
+ -- taggin reflect/breadth path; use Length=2*Z not an independence factorization
+ have hLen:X'.length=2:=rfl
+ obtain ⟨Z₀,L,l,cZ,v',p4,hL,YX⟩:= hn.stratum (terrain Y H (Y.ir i) s).symm hy X' hc (hLen.symm ▸ Nat.one_le_ofNat) hLen.le (fun i=>by
+    simp only [X',whereV,List.foldr_cons,List.foldr_nil,union_empty]
+    exact cows_s B J hm j i)
+ have lZ:Z₀ ≤ L.length:= by rw [cZ,hLen]; omega
+ have hν:(More Ns).val^4 ≤ L.length*(4*(breadth B J+J))^4:= hL.trans (Nat.mul_le_mul_right _ lZ)
+ let Vc:= CF.Pannier.Chancel.Cliplet.probe L -- qualified alias
+ have hQ(k):Sea (Fock.cutM (Tset (SN i k))) (mateK _):=by rw [←touchP]; exact tickB ..
+ have hCap: Backlog Y s i k e⁻¹ T κ Vc:=by
+    intro x'; exact manyYear P.J.k P.J.n l (hU k) P.dpos.le F₀ (roofage Y i s) (he ▸ xP) (le_max_left ..) Z (fun i h b=> F₁ MU b i h) Q pR e hp vz a T (ratioFort d) t' hr g0 uz vT (mood2 q d w J vq gq L.length Ns hν) x' _ _ (safety Y s i k x').2 (hQ s) -- tune
+ have hp4: ‖X₀ Vc‖ ≤ Real.exp (-5001*sites Ns):= (gV k S.depth S.enters Vc T (l.corsage.env) hCap).trans (Real.exp_le_exp_of_le (mul_le_mul_of_nonneg_right g (show 0≤ sites Ns by unfold sites; positivity)))
+ have Hc: ‖X₀ Vc-Y₀ Vc‖≤ Real.exp (-5001*sites Ns):=by refine (φ i S.depth Vc D l.corsage.env (fun x=> (l.capPrice (fun a v=> F₁ _ _ a.s (l.granted a v).far) hχ x pR.le).trans (pow_le_pow_right₀ (by linarith) (Nat.mul_le_mul_right _ p4)))).trans_eq (div_mul_cancel₀ _ hg.ne')
+ let Vₛ:= CF.Pannier.Chancel.Cliplet.probe X'
+ have ℓ0:(1:ℝ) ≤ Z₀:= by exact_mod_cast v'
+ have ht: (Z₀:ℝ) ≤ sites Ns:= by unfold sites; exact_mod_cast lZ.trans p4
+ have gTrade: ‖Y₀ Vₛ‖ ≤ Real.exp (-5000):=by
+    apply (pow_le_pow_iff_left₀ (norm_nonneg _) (Real.exp_pos _).le (show Z₀ ≠0 from v'.ne')).mp
+    apply YX.trans; rw [←Real.exp_nat_mul]; refine ((norm_le_norm_sub_add (Y₀ Vc) (X₀ Vc)).trans (add_le_add ((norm_sub_rev ..).trans_le Hc) hp4)).trans ?_
+    rw [show Z₀ *(-5000:ℝ)=Z₀+(-5001*(Z₀:ℝ)) by ring,Real.exp_add]
+    have hp:Real.exp (-5001*sites Ns) ≤ Real.exp (-5001*(Z₀:ℝ)):= Real.exp_le_exp_of_le (by linarith)
+    have hE:2 ≤ Real.exp (Z₀:ℝ):=by linarith only [ℓ0,Real.add_one_le_exp (Z₀:ℝ)]
+    nlinarith only [hE,hp, (show 0<Real.exp (-5001*(Z₀:ℝ)) from Real.exp_pos _)] -- tune positivity
+ have hFee: ∀ x: Fields Ns, ‖F.frame x‖ ≤ (1+R)^(q^4):=fun i'=> hf.price (F₁ MU _ _ hf.far) (hχ _) i'
+ have h₁: ‖X₀ Vₛ-Y₀ Vₛ‖ ≤ G*D := φ i S.depth Vₛ D hc.corsage.env (fun x=> (hc.capPrice (fun a v=> F₁ _ _ a.s (hc.granted a v).far) hχ x pR.le).trans (pow_le_pow_right₀ (by linarith) (Nat.mul_le_mul_right _ (le_trans (Nat.le_mul_of_pos_left _ v') (cZ.symm ▸ p4)))))
+ have hs: ‖X₀ Vₛ-Y₀ Vₛ‖≤Real.exp (-5000):= h₁.trans ((div_mul_cancel₀ _ hg.ne').trans_le (Real.exp_le_exp_of_le (by linarith)))
+ have hx: Vₛ=Buffered.reflMark j 0 F.frame * F.frame:=by simp [Vₛ,X']; rfl
+ refine ⟨hf,hFee,?_⟩; change ‖X₀ (Buffered.reflMark j 0 F.frame * F.frame)‖≤ _
+ rw [←hx]; apply (norm_le_norm_sub_add _ (Y₀ Vₛ)).trans
+ have u': Real.exp (-5000)≤ 1/4000:=by rw [Real.exp_neg,←one_div]; exact one_div_le_one_div_of_le (by norm_num) (by linarith [Real.add_one_le_exp 5000])
+ exact (add_le_add hs gTrade).trans (by linarith only [u'])
+end Papal
+end LocalLimit
+end Rate
+end YM.CF.Py
+#print axioms YM.CF.Py.Rate.LocalLimit.Papal.wineLaunch

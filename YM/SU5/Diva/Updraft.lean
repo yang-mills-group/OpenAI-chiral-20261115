@@ -1,0 +1,91 @@
+import YM.SU5.Diva.Emporium
+import YM.SU5.Lamour.Matinee
+set_option autoImplicit false
+set_option maxHeartbeats 320000
+set_option synthInstance.maxSize 24000
+set_option linter.unusedSectionVars false
+set_option quotPrecheck false
+noncomputable section
+namespace YM.CF.Py
+open Function NormedSpace Filter Metric Lattice Wilson Laurent Finset MeasureTheory RG Precision Tree Push.SectorMeasure AnalyticBridge.LocalGaussianLaws
+open CF.Appel CF.Newt CF.Char CF.Neige CF.Summit Next Next.Fluctuations Next.SectorChange Next.SectorChange.Rows Next.SectorChange.Wisps Next.SectorChange.Schur MultiNext.SignedSource Lyre Banjo Analysis Pressure AnalyticBridge.MarginalMultiplier3b1d PatchReads SectorNext.Remainder SectorNext.Remainder.Scales Planned.AtomRegular Extra.Iteration Extra.Iteration.Scales
+open Skye Scree
+open scoped Topology ContDiff BigOperators InnerProductSpace Matrix MatrixOrder Kronecker Classical Matrix.Norms.L2Operator
+open AnalyticBridge.Annulus1AD Ac Esti
+open Atala Forge Cloak Rill Hive Fock Stilo Palot Scion
+open Cube Lat Tenant Tulip
+open Pastry Hake Levier Urn Peaks Fock Laic Branch Drapes
+attribute [local instance] opCStarAlgebra
+open Rush Scroll Paige Vault Phase Acorn Spire
+attribute [local instance] opCStarAlgebra
+open Tarn Cay Slate Esti Cour Hest Arena Reine Kennel Facet Broc Pec Push.SectorMeasure.Oriented
+open Hom Vale Vale.Grace Next.Free Thera Nacre Dial Fock
+open Tye Lich Stake Pail Pail.Dew
+open Lich.Muster Lor
+open Jet Vol Rel
+local notation "G5"=>SU.group
+open Cascade
+open Fief
+open Yaw Pig
+open Wray
+open Lich.Muster Push.AbsoluteSums
+open Iva Eire
+open Trees Footprint Iva Eire
+open Jade
+open Oath Feu Feu.Corset Nor
+open Chaff Gloss Maize Tye RP RP.Str
+open Brace
+namespace Rate
+open Pitching Focus CF.Mint
+namespace LocalLimit
+open Preparation
+variable {P:Preparation}{l:ℕ}(Y:Course P (VolumeCape.Dream.Nimbus l))
+variable {h z:ℝ}
+open Buffered
+open CF.Pannier.Damask
+open YM.CF.Velvet
+open Pannier
+namespace Papal
+local notation "ℶ" => hat P.R.L P.x
+local notation "💠" => P.K.j
+open Lamour.Bridge CF.Pannier.Chancel
+variable {Z θ b v t E ε R C ξ:ℝ} {n a A y z' d k r:ℕ}
+universe u0
+theorem salon (p: Optic P.K.j n k d v ε b E C R)(hv:0<z)(s:z≤1)(u:Procurement P.K.j a P.d)(ht:Closen P.K.j z ε)(h:SizeCloud P.K.j (θ/9) z)(e:0<θ)(w:Geometry P)(v':P.Attic)(X:0<ξ)(Q:0≤ C)(l':0<R)(r:ℕ): Meringue.{u0} Y k r d ε ξ C R θ:=by
+ obtain ⟨g,hg,z',t⟩:=mold_phase u hv s p.zephyr;
+ obtain ⟨τ,T,W⟩:=point_of_purchase hg X r z'; let L:=Hfuel z v; let G:= winterFee d (((r+z')+1)+P.J.n) R C z
+ obtain ⟨a',E'⟩:=Kea.gave P.K.j (by rw [P.kJ]; omega)
+ have hp:=pristineUpper Y (θ/9) u hv s (by positivity) h (show 0≤L from (by have hp:=flow_pos hv; have hv:=p.genuine; unfold L Hfuel; positivity)) v' w G; rw [show 9*(θ/9)=θ from (by ring)] at hp
+ have he:Tendsto (fun s=>temp (hat P.R.L P.x s)) atTop (𝓝 0):= (show Tendsto temp atTop (𝓝 0) from (by simpa using Work.E09.radiusB_temp 0)).comp (turnover P)
+ unfold Meringue; filter_upwards [hp, he.eventually (ge_mem_nhds P.J.ht), he.eventually (ge_mem_nhds T)] with j H u' t0
+ let Z:=n+a+a'+2*(r+z'+1)+1
+ filter_upwards [H,(count_grows Y j).eventually_ge_atTop Z] with i R hr k A B I _ _ l V S o pV S0;
+ let N:= count Y j i; let f:= cartMark l V; let H0:= gram Y j i k; let u0:=H0.p.threshold; let W0:=room Y j i; let M:=H0.J.M
+ refine R k A B f _ (stowM l S V (fun i t=> (pV i t).range)).env (fun x=> ?_)
+ have hx:u0=temp (hat P.R.L P.x j):= speck Y j i k B; have ht':0<u0:= H0.p.threshold_pos; have h:a≤ N.val:= by change Z≤ N.val at hr; unfold Z at hr; omega
+ have htN: Z≤ N.val:=hr;
+ apply _root_.YM.CF.Lamour.Bridge.launch l o S V p u (W u0 ht'.le (hx.trans_le t0)) (roofage Y i j) (E' _ (Vale.val_e ..) (by change a'≤ N.val; unfold Z at htN; omega)) (by change n ≤ N.val; unfold Z at htN; omega) h hv s t ht x (hx.trans_le u') (by change 2*(r+z'+1)< N.val*2; unfold Z at htN; omega) Q l' pV S0 _ (safety Y j i k x).2
+open Buffered Afterglow Journey
+open scoped ComplexOrder
+open CF.Pannier.Chancel
+open CF.Pannier.Chancel.Cliplet
+variable (H:Real.exp 1≤ P.x)
+open YM.CF.Lamour.Bridge.Celeste
+open YM.CF.Lamour.Bridge.Celeste.Morn
+open YM.CF.Lamour.Bridge YM.CF.Velvet
+variable {u' :ℝ}{ι:Type}[Fintype ι]
+lemma salon_serve (X:Geometry P) (Q:∃ g, Procurement P.K.j g P.d) (h₀:P.Attic) (U:Ladle 4 P.block (reserve P l) u' ι)(h':0<u')(v:u'≤1/2): ∃ c,Lecture Y H U c (4*Real.exp 1*(4*u')) := by
+ obtain ⟨_,⟨f⟩⟩:= choose_biscuit h' v U
+ let A:=U; let t:= f.chosen; let C':=f.bucks; let g:=f.eye; let p:=f.epoch; let r:=f.radius; let k:=f.burr; have hε:0<f.ee:=f.eye.zephyr; obtain ⟨a,w⟩:= Q; let ε:= sealK p k r P.block (reserve P l); have hσ:0 < 4*u':=by positivity
+ have hh0:∀ᶠ u:ℝ in 𝓝[>] (0:ℝ), ∀ x:ι×Bool,∀ᶠ N:Side in atTop,Even N.val → BroadWeld N (A.pour t x) r p P.K.j f.ee u C' (4*u') :=by rw [P.kJ]; exact Filter.eventually_all.mpr (fun i=> buys 0 (f.service.seat i) (mem_insert_self ..) (by rw [mul_div_cancel_left₀ u' (by norm_num : (4:ℝ)≠0)]; exact f.service.fit_v i) (f.service.smallL i) (f.service.stan i) (f.service.tender i) hε) -- tactic order tune
+ obtain ⟨δ,hZ,δp⟩:= (hh0.and self_mem_nhdsWithin).exists
+ obtain ⟨x,x₀,b₀,s₀,o₀⟩:=choose_floor 4 (by decide) (show 0<ε*(8/9) by unfold ε; exact mul_pos (seal_pos ..) (by norm_num)) hε
+ have hp:Meringue.{0} Y k r (180*p) f.ee δ C' (4*u') ε:= salon Y (P.kJ.symm ▸ g) x₀ b₀ w (P.kJ.symm ▸ s₀) (by rw [P.kJ, show ε/9=ε*(8/9)/8 from (by ring)]; exact o₀) (seal_pos ..) X h₀ (show 0<δ from δp) f.service.warm hσ r
+ exact ⟨f.chosen, f.service.gauge,fun {s t I E} h=> (continuum_w Y H f.service.warm hp hσ (seal_pos ..).le (sealed Y H p k r) h).mono fun s h1 i=> h1 _ (Tower.aux_test ((f.service.seat i).1.narrow _|>.widen)) (hZ i)⟩ -- implicit ∀
+end Papal
+end LocalLimit
+end Rate
+end YM.CF.Py
+#print axioms YM.CF.Py.Rate.LocalLimit.Papal.salon
+#check @YM.CF.Py.Rate.LocalLimit.Papal.salon_serve
+#print axioms YM.CF.Py.Rate.LocalLimit.Papal.salon_serve

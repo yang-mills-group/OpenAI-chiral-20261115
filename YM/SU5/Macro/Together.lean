@@ -1,0 +1,73 @@
+import VerifiedSatinNovember4Updates
+import YM.SU5.Macro.Retest
+import YM.SU5.Macro.Both
+/-!
+# Milestone 2. Public witness/hypotheses
+
+See also `Home.Registration` (file name suffix) and `Atlas.bought`, which now can both be invoked
+on this very character. Of course not claiming `AtCharacter` applied with this election is
+the same as with the opaque choice with other witnesses. Use `h : Siam.Fetch` for EACH test
+from that last line: h.budget etc. give all costs via the exact API of `Ascents,Margin,...`.
+-/
+set_option autoImplicit false
+set_option synthInstance.maxSize 28000
+set_option maxRecDepth 4500
+set_option maxHeartbeats 1200000
+set_option quotPrecheck false
+noncomputable section
+
+namespace YM.CF.Buffered.Afterglow.Tower.Selection
+open Function Filter Metric NormedSpace SU Lat Lattice Wilson Cube Finset Mir Phase MeasureTheory
+open RP Reflect Advance Nacre Spire Scroll Peaks Rush Tulip Skye Window Vale Girt
+open Push.SectorMeasure RG Lifted Scree ProbabilityTheory Py Py.Rate LocalLimit FullBill Sound Common
+open scoped Topology Matrix MatrixOrder Matrix.Norms.L2Operator BigOperators Kronecker ComplexOrder
+open scoped InnerProductSpace NNReal ENNReal Classical
+attribute [local instance] opCStarAlgebra
+open Preparation Journey Satin Heat Fock Analysis SlabMark OS.Semigroup MeshClock
+open Vacancy
+
+open CF.Pannier.Chancel Tapestry Papal SatinVerification
+open CF.Pannier.Chancel.Lantern CF.Pannier.Chancel.Lantern.Bulb CF.Pannier.Chancel.Lantern.Bulb.Mezz
+open Crest.Airy (Coast Wq)
+open Mileage
+attribute [local instance] opCStarAlgebra
+namespace Season
+attribute [local instance] opCStarAlgebra
+open LocalLimit.Rundle
+open Fern Planet
+open CF.Pannier.Chancel.Attic.Cairn CF.Pannier.Chancel.Attic.Cairn.Giant
+open Papal.Convent
+open Home Home.Siam -- mask grammar
+theorem coresident (x γ ε Ω:ℝ)(p0:10000 ≤ Ω)(p:0<γ)(hv0:0<ε) (z:Supplier) :
+    ∃ (Λ' : Preparation) (l' : ℕ) (Z : ℝ), x < Λ'.x ∧ Λ'.d ≤ γ ∧ decorate z Λ' l' Z ≤ Λ'.h ∧ Λ'.d≤ Papal.Convent.enter∧ Scooped Λ' ∧ Λ'.nominated (VolumeCape.Dream.Nimbus l') ∧
+    ∃ (H : Real.exp 1 ≤ Λ'.x) (Y : Course Λ' (VolumeCape.Dream.Nimbus l')),
+      wavering Y ε ∧ (∃ t:ℝ,0<t∧t≤1∧t⁻¹≤Λ'.h ∧ eternal Y t ε)∧ (∃ z', Usable (D:=Λ'.δ) Λ'.V Λ'.W Λ'.J Λ'.N0 z' Λ'.delay Y.meter) ∧
+      (∀ i k, ((Y.voyage i).X k).Prepared Λ'.P Λ'.delay) ∧
+      (∀ i j:ℕ, Buffered.Advance.LoomLaw ((Y.voyage i).CapeT j) (YM.SU5.FiniteGaugeData.Audit1102.lawRadius (VolumeCape.Dream.plot l').C)) ∧
+      ∃ (q d w : ℕ) (c : ℝ) (D0 : Council.Choir Y H q d w c Z Ω)
+      (i k : ℕ → ℕ) (I : ℕ → Family (tent Y H) → ℕ → ℂ) (E : ℕ → Family (tent Y H) → ℂ)
+      (L0 : Rack Λ' l') (P0 : Clay Λ' l') (T' : ℕ→ℕ→Tariff) (t : ℕ→Tariff) (V : Fashion Y H i k I E L0 P0 T' t) (Q' : SatinVerification.GroundExtension (i := i) (k := k) (E := E) Y H)
+      (b v n : ℕ)(γ' A E':ℝ)(Φ:Mezz)(X X' Z': Coast→ Wq Φ.marks)(u:Mileage.Effigy Y H Ω b v γ' A E' Φ n X X' Z') (M:Giant)(β:M.Notes→Crest.Rail.basisRule)(Cβ γβ:ℝ)(pβ:PriceE TipC Ω (Papal.Convent.crew Y H) M β Cβ γβ),
+      guardFee M ≤ Λ'.h ∧ SeasonCert Y H V ∧ Nonempty (∀ v : Axis,Arena Y H Q'.history.circuit v 0 false) ∧
+        ∀ (C : ∀ v : Axis,Arena Y H Q'.history.circuit v 0 false) (a : ℕ),
+        ∃ (Ψ:Horizon Y H V.univ_ Q'.history Q'.clipped 3 false (C 3)) (x:Ψ.X) (s m m' n':ℕ)(L:∀ W:Window.Family,Bool→ Sermon Φ (tent Y H) W)(Z:SU.Slot→Family (tent Y H))(Xβ:∀ W:Window.Family,Bool→SpireBook M (tent Y H) W)(Uβ:Window.Family→Voice.Tonic M), a ≤ s ∧ Fern.OnOrion Y H V.univ_ Q'.history Q'.clipped C V.toExhibition u s m m' n' M Ψ x Z L Xβ Uβ q d w ∧
+          Law Y H V.univ_ Q'.history Q'.clipped 3 false (C 3) Ψ ∧
+          Tower.Selected.Issued Y H V.univ_ Q'.history Q'.clipped 3 false (C 3)
+            (Home.asPanel Y H V.univ_ Q'.history Q'.clipped 3 false (C 3) Ψ) ∧
+          Reconstruction.Atlas.BoughtAtlas Y H V.univ_ Q'.history Q'.clipped 3 (C 3)
+            (Home.asDisplay Y H V.univ_ Q'.history Q'.clipped 3 false (C 3) (Ψ.character x)) C ∧
+          ∃ N:ℕ, ∀ v:Window.Family, Siam.Fetch Y H V Q' C (Ψ.character x) s M
+            (scented Y H M (Xβ v false) (Uβ v) N) (light Y H M (Xβ v false) (Xβ v true) (Uβ v))
+            (PhaseChoice.aperture N) v := by
+ obtain ⟨Λ,l,Z,g,v,hσ,i,sc,h,H,Y,cost,cost',ca,q,w,q₀,u,m,c,X,i',k,I,E,r,s',T,t,V,Q,b,y,w₀,a₀,G,d_0,L,z₀,x₀,y',W,M,β,Cβ,gβ,pβ,hβ,p',v',F⟩:= Equilis x γ ε Ω p0 p hv0 z
+ refine ⟨Λ,l,Z,g,v,hσ,i,sc,h,H,Y,cost,cost',ca,q,w,q₀,u,m,c,X,i',k,I,E,r,s',T,t,V,Q,b,y,w₀,a₀,G,d_0,L,z₀,x₀,y',W,M,β,Cβ,gβ,pβ,hβ,p',v',fun C a=>?_⟩
+ obtain ⟨Ψ,p0',s,n,n',c',F,Z',P,R,eX,t⟩:= F C a
+ -- now the same epoch, room and chosen character. pick clear size simultaneously
+ obtain ⟨N,r⟩:= Filter.Eventually.exists (p:=fun N=>∀ a:Window.Family,Siam.Fetch Y H V Q C (Ψ.character p0') s M (scented Y H M (P a false) (R a) N) (light Y H M (P a false) (P a true) (R a)) (PhaseChoice.aperture N) a) (f:=Filter.atTop) (Filter.eventually_all.mpr
+   (fun a:Window.Family=> litWhen Y H V Q C (Ψ.character p0') s M _ _ _ (t.image a) (t.series_.dues a)))
+ have hp:= (t.series_.ears.ears.card false).character_
+ exact ⟨Ψ,p0',s,n,n',c',F,Z',P,R,eX,t,hp,Home.issued Y H V.univ_ Q.history Q.clipped 3 false (C 3) Ψ hp,Reconstruction.Atlas.bought Y H V.univ_ Q.history Q.clipped 3 (C 3) _ C,N,r⟩
+end Season
+end YM.CF.Buffered.Afterglow.Tower.Selection
+
+#print axioms YM.CF.Buffered.Afterglow.Tower.Selection.Season.coresident

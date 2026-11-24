@@ -1,0 +1,70 @@
+Source notices for the chiral SU(5) proof
+
+The license files in this directory apply to the materials identified in the source notices.
+
+This proof incorporates code from OpenAI's Wilson Yang–Mills formalization.
+The upstream project released its original code under the Apache License,
+Version 2.0. Wilson-source-notices.tsv identifies the corresponding modules
+and records changes. Wilson-Yang-Mills-LICENSE.txt contains the full license.
+
+Mathlib-source-notices.tsv identifies adapted Mathlib passages, their authors
+and their copyright notices. Mathlib-LICENSE.txt contains the full license.
+In both tables, archive_path is relative to this project. The Wilson table
+also gives the path in the original Wilson project. The Mathlib table
+links to the corresponding upstream sources.
+
+The massive QCD Lean proof distribution contains passages also used in this proof.
+Massive-QCD-source-notices.tsv identifies the files and lines in both projects
+and gives the SHA-256 of each complete source file in the QCD distribution.
+Passages that also occur in the Wilson distribution are credited in both tables.
+
+The project uses Lean, Lake and the pinned libraries in lake-manifest.json.
+The toolchains and these libraries are installed separately.
+
+Project | Credits and upstream source
+Lean 4 | Leonardo de Moura, Sebastian Ullrich and the Lean contributors.
+  https://github.com/leanprover/lean4/blob/8c9756b28d64dab099da31a4c09229a9e6a2ef35/src/Lean.lean#L2-L4
+  https://github.com/leanprover/lean4/blob/8c9756b28d64dab099da31a4c09229a9e6a2ef35/src/Lean/EnvExtension.lean#L2-L4
+Lake | Mac Malone and the Lake contributors.
+  https://github.com/leanprover/lean4/blob/8c9756b28d64dab099da31a4c09229a9e6a2ef35/src/lake/Lake.lean#L2-L4
+Mathlib | The mathlib Community. The Lean Mathematical Library, CPP 2020. https://doi.org/10.1145/3372885.3373824
+  https://github.com/leanprover-community/mathlib4/blob/81a5d257c8e410db227a6665ed08f64fea08e997/CITATION.md#L3-L12
+Batteries | The Batteries contributors (leanprover-community).
+  https://github.com/leanprover-community/batteries/blob/023ce7d62a0531e22a5331e20b587817a80d49ff/README.md#L1-L3
+Aesop | Jannis Limperg and the Aesop contributors.
+  https://github.com/leanprover-community/aesop/blob/a7dbf0c63b694e47f425f3dcddbc0e178bb432d3/Aesop/Frontend/Tactic.lean#L2-L4
+Qq (quote4) | Gabriel Ebner and the Qq contributors.
+  https://github.com/leanprover-community/quote4/commit/3af42d899d9aea59da0ae9bb67c68502ca125e75
+Lean4 CLI | mhuisi and the Lean4 CLI contributors.
+  https://github.com/leanprover/lean4-cli/blob/88679d088c9720c27ebdf2ba4dafe17341747f94/LICENSE#L1-L7
+ImportGraph | Kim Morrison and other mathlib contributors (original tool), Eric Wieser (HTML visualization), and Jon Eugster, Kim Morrison and the wider Lean community (maintenance).
+  https://github.com/leanprover-community/import-graph/blob/7e9612bf0b9ee66db3cb5b9988a35afc706f5a12/README.md#L122-L130
+LeanSearchClient | Siddhartha Gadgil and the LeanSearchClient contributors.
+  https://github.com/leanprover-community/LeanSearchClient/blob/c5d5b8fe6e5158def25cd28eb94e4141ad97c843/LeanSearchClient/Syntax.lean#L2-L4
+Plausible | Henrik Böving, Simon Hudon, Kim Morrison, Ernest Ng, AWS and the Plausible contributors.
+  https://github.com/leanprover-community/plausible/blob/e12c1910fe855cbfc38803cd4e55543906d5fa62/Plausible/Gen.lean#L2-L4
+  https://github.com/leanprover-community/plausible/blob/e12c1910fe855cbfc38803cd4e55543906d5fa62/Plausible/Tactic.lean#L2-L4
+  https://github.com/leanprover-community/plausible/blob/e12c1910fe855cbfc38803cd4e55543906d5fa62/Plausible/DeriveArbitrary.lean#L2-L4
+  https://github.com/leanprover-community/plausible/blob/e12c1910fe855cbfc38803cd4e55543906d5fa62/Plausible/Arbitrary.lean#L2-L4
+ProofWidgets4 | Wojciech Nawrocki and Edward W. Ayers, with contributions from Tomáš Skřivan and the ProofWidgets contributors.
+  https://github.com/leanprover-community/ProofWidgets4/blob/6e311e2a844da9b2cc3971187df2fe0066947b93/README.md#L11
+
+Verification tools
+
+Project | Credits and upstream source
+Lake Comparator | Henrik Böving and the Lean contributors. Copyright 2025 Lean FRO, LLC.
+  https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/lake/Lake/CLI/Check.lean#L1-L5
+lean4export | Sebastian Ullrich (original exporter), Henrik Böving (parser) and the Lean contributors.
+  https://github.com/leanprover/lean4export/commit/a4e9e21fa20188964303bed237f6021fcfaafcb6
+  https://github.com/leanprover/lean4export/blob/4e7915201d3f9f04470d9eae002fa695f7cdc589/Export/Parse.lean#L1-L5
+con-ron | Lean FRO. Joachim Breitner supervised this Rust port of con-leche.
+  https://github.com/leanprover/con-ron/blob/dd8d8218892c871276b1e569d3decbb368bba1b6/README.md#L1-L5
+  https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/LICENSES#L1373-L1377
+Lean's bundled leanchecker | Kim Morrison, Sebastian Ullrich and the Lean contributors. Copyright 2023 Kim Morrison.
+  https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/src/LeanChecker.lean#L1-L5
+bubblewrap | The bubblewrap contributors.
+  https://github.com/containers/bubblewrap
+
+The upstream Lake Comparator example is by Henrik Böving, copyright 2025
+Lean FRO, LLC, under the Apache License, Version 2.0 (Lean-LICENSE.txt).
+https://github.com/leanprover/lean4/blob/eb6cafb7290e8bd5f2937522d8d804f58f02bafc/tests/lake/tests/comparator-from-export/test.sh

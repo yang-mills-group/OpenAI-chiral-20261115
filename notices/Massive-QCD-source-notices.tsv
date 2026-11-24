@@ -1,0 +1,5 @@
+archive_path	archive_lines	massive_QCD_source_file	source_lines	passage_notice	source_file_sha256
+GaugeFieldConstruction/CloverSymmetryAxis.lean	294–299	proof/YM/Sunda/Gully.lean	20–25	The cited lines match apart from indentation.	245445d650eba5f4b68d7bc84c5a6eb3cb34cefcd840fdaaf0b53e544bd6e6f1
+GaugeFieldConstruction/EurekaΛL.lean	43–51	proof/YM/MassiveBridge/Soil.lean	65–73	The text of the cited lines matches exactly.	2a3f2a36f86128710343fc6913350e9cdd8ccac4dfb27d0ba3bf480cd00dbac4
+YM/SU5/FiniteGaugeData/Hills/Prisma.lean	24–43	proof/YM/Kly/Calm.lean	68–87	The text of the cited lines matches exactly.	fd848aea00034e8511e6146fd1010671ce59a844b499d10d959d68aedfa7a24c
+YM/SU5/Registration/Ink/Railing.lean	19–25	proof/YM/MassiveBridge/Heat.lean	169–175	The text of the cited lines matches exactly.	e70daf275afce830e3420ec8ce34adad27955df42f87aa78bb5ebec69a0ad6b9

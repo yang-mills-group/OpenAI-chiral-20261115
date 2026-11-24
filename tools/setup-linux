@@ -1,0 +1,80 @@
+#!/usr/bin/env bash
+# Install the proof compiler, declaration exporter, and verification tools.
+set -euo pipefail
+umask 077
+
+usage() {
+  printf '%s\n' 'Usage: setup-linux /absolute/path/to/new-tools-directory' \
+    'Requires Linux x86_64 or aarch64, bash, curl, git, CA certificates, GNU coreutils and tar, zstd, make, and a C compiler.' \
+    'The verification driver also needs Python 3.9+ and bubblewrap (bwrap) with user namespaces.'
+}
+fail() { printf 'setup-linux: %s\n' "$*" >&2; exit 1; }
+if [[ $# == 1 && $1 == --help ]]; then usage; exit 0; fi
+if [[ $# != 1 || $1 != /* ]]; then usage >&2; exit 2; fi
+[[ $(uname -s) == Linux ]] || fail 'Linux is required.'
+for program in curl git sha256sum tar zstd cc realpath mktemp install; do
+  command -v "$program" >/dev/null || fail "Missing program: $program"
+done
+case $(uname -m) in
+  x86_64)
+    platform=linux
+    sha432=fca846f3588724a38ad19ee40292c67cb7438d7555903372e3308eef795ba516
+    sha435=7289597a44543246c9227b8cae501767e095ce17f6d448b95fc4a8dc97268f6d ;;
+  aarch64)
+    platform=linux_aarch64
+    sha432=e5eb67e5f30c14d57e70bf7ca2ad880b09a52d75da1cf5e2deabb2418a84c8d1
+    sha435=c8f0f8a3920e839718b1343e6781fd80a3e9b1024fbcd7078eb30f54e806b028 ;;
+  *) fail 'Supported Linux architectures are x86_64 and aarch64.' ;;
+esac
+commit432=8c9756b28d64dab099da31a4c09229a9e6a2ef35
+commit435=eb6cafb7290e8bd5f2937522d8d804f58f02bafc
+export_commit=4e7915201d3f9f04470d9eae002fa695f7cdc589
+export LC_ALL=C GIT_CONFIG_NOSYSTEM=1 GIT_CONFIG_GLOBAL=/dev/null GIT_TERMINAL_PROMPT=0
+unset LEAN_PATH LEAN_SRC_PATH LEAN_SYSROOT ELAN_TOOLCHAIN LAKE_HOME LAKE LEAN_CC GIT_CONFIG_COUNT GIT_CONFIG_PARAMETERS
+[[ ! -e $1 && ! -L $1 ]] || fail 'Supply a new tools directory.'
+prefix=$(realpath -m -- "$1")
+stage=$(mktemp -d -- "$(dirname -- "$prefix")/.lean-tools.XXXXXXXX")
+trap 'rm -rf -- "$stage"' EXIT
+mkdir -p "$stage/v432"/{lean,bin} "$stage/v435" "$stage/build"
+
+install_release() {
+  local version=$1 checksum=$2 commit=$3 dest=$4
+  local asset="lean-$version-$platform.tar.zst"
+  local file="$stage/build/$asset"
+  curl -q --fail --location --show-error --silent --retry 3 --proto '=https' --proto-redir '=https' \
+    "https://github.com/leanprover/lean4/releases/download/v$version/$asset" -o "$file"
+  printf '%s  %s\n' "$checksum" "$file" | sha256sum --check --strict
+  tar --zstd --extract --file="$file" --strip-components=1 --directory="$dest"
+  [[ $("$dest/bin/lean" --githash) == "$commit" ]] || fail "Lean $version commit mismatch."
+  "$dest/bin/lean" --version
+  rm -- "$file"
+}
+install_release 4.32.0 "$sha432" "$commit432" "$stage/v432/lean"
+install_release 4.35.0 "$sha435" "$commit435" "$stage/v435"
+
+src="$stage/build/lean4export"
+git init -q "$src"
+git -C "$src" fetch -q --depth=1 https://github.com/leanprover/lean4export.git "$export_commit"
+git -C "$src" -c advice.detachedHead=false checkout -q --detach FETCH_HEAD
+[[ $(git -C "$src" rev-parse HEAD) == "$export_commit" ]] || fail 'Exporter commit mismatch.'
+[[ $(cat "$src/lean-toolchain") == leanprover/lean4:v4.32.0 ]] || fail 'Exporter toolchain mismatch.'
+(
+  cd -- "$src"
+  export PATH="$stage/v432/lean/bin:$PATH"
+  lake build lean4export
+  git diff --exit-code HEAD -- lake-manifest.json
+)
+install -m 0755 "$src/.lake/build/bin/lean4export" "$stage/v432/bin/lean4export"
+install -m 0644 "$src/LICENSE" "$stage/v432/lean4export-LICENSE"
+rm -rf -- "$stage/build"
+(
+  cd -- "$stage"
+  PATH="$stage/v435/bin:$PATH" "$stage/v435/bin/lake" comparator --help >/dev/null
+  for tool in v435/bin/{con-ron,leanchecker}; do [[ -x $tool ]] || fail "Missing $tool."; done
+  sha256sum v432/lean/bin/{lean,lake} v432/bin/lean4export v435/bin/{lean,lake,leanchecker,con-ron} > tools.sha256
+  sha256sum -c tools.sha256
+)
+mv -nT -- "$stage" "$prefix"
+[[ ! -d $stage ]] || fail 'Tools destination was created during installation.'
+trap - EXIT
+printf 'Verified tools installed in %s\n' "$prefix"
